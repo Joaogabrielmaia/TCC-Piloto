@@ -1,0 +1,33 @@
+{
+  "task": "HumanEval/21",
+  "generation": 1,
+  "provider": "openai",
+  "model_requested": "gpt-6.1-sol",
+  "model_returned": "gpt-6.1-sol",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\nfrom typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 4.2,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\nfrom typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    minimum = min(numbers)\n    maximum = max(numbers)\n    if minimum == maximum:\n        return [0.0 for _ in numbers]\n    span = maximum - minimum\n    return [(number - minimum) / span for number in numbers]\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 108,
+    "total_tokens": 338,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 24,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "timestamp": "2026-11-09T15:17:41Z"
+}

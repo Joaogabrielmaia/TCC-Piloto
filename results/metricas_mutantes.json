@@ -1,0 +1,143 @@
+{
+  "mutantes": 180,
+  "instaveis": [],
+  "por_grupo": {
+    "fronteira": {
+      "n": 116,
+      "mata_oficial": {
+        "mortos": 96,
+        "score": 82.8,
+        "ic95": [
+          74.9,
+          88.6
+        ]
+      },
+      "mata_fronteira": {
+        "mortos": 99,
+        "score": 85.3,
+        "ic95": [
+          77.8,
+          90.6
+        ]
+      },
+      "mata_ofi_front": {
+        "mortos": 108,
+        "score": 93.1,
+        "ic95": [
+          87.0,
+          96.5
+        ]
+      },
+      "mata_evalplus": {
+        "mortos": 116,
+        "score": 100.0,
+        "ic95": [
+          96.8,
+          100.0
+        ]
+      },
+      "so_fronteira_mata_alem_oficial": 12,
+      "mcnemar_ofifront_vs_evalplus": {
+        "so_ofifront": 0,
+        "so_evalplus": 8,
+        "p": 0.0078
+      },
+      "sobrevivem_todas": 0
+    },
+    "generico": {
+      "n": 50,
+      "mata_oficial": {
+        "mortos": 48,
+        "score": 96.0,
+        "ic95": [
+          86.5,
+          98.9
+        ]
+      },
+      "mata_fronteira": {
+        "mortos": 42,
+        "score": 84.0,
+        "ic95": [
+          71.5,
+          91.7
+        ]
+      },
+      "mata_ofi_front": {
+        "mortos": 50,
+        "score": 100.0,
+        "ic95": [
+          92.9,
+          100.0
+        ]
+      },
+      "mata_evalplus": {
+        "mortos": 50,
+        "score": 100.0,
+        "ic95": [
+          92.9,
+          100.0
+        ]
+      },
+      "so_fronteira_mata_alem_oficial": 2,
+      "mcnemar_ofifront_vs_evalplus": {
+        "so_ofifront": 0,
+        "so_evalplus": 0,
+        "p": null
+      },
+      "sobrevivem_todas": 0
+    },
+    "todos": {
+      "n": 166,
+      "mata_oficial": {
+        "mortos": 144,
+        "score": 86.7,
+        "ic95": [
+          80.7,
+          91.1
+        ]
+      },
+      "mata_fronteira": {
+        "mortos": 141,
+        "score": 84.9,
+        "ic95": [
+          78.7,
+          89.6
+        ]
+      },
+      "mata_ofi_front": {
+        "mortos": 158,
+        "score": 95.2,
+        "ic95": [
+          90.8,
+          97.5
+        ]
+      },
+      "mata_evalplus": {
+        "mortos": 166,
+        "score": 100.0,
+        "ic95": [
+          97.7,
+          100.0
+        ]
+      },
+      "so_fronteira_mata_alem_oficial": 14,
+      "mcnemar_ofifront_vs_evalplus": {
+        "so_ofifront": 0,
+        "so_evalplus": 8,
+        "p": 0.0078
+      },
+      "sobrevivem_todas": 0
+    }
+  },
+  "equivalentes": 14,
+  "custo_testes_por_morto": {
+    "oficial": 7.3,
+    "fronteira": 4.6,
+    "evalplus": 410.4
+  },
+  "testes_por_tarefa_medios": {
+    "oficial": 5.6,
+    "fronteira": 3.8,
+    "evalplus": 461.7
+  }
+}

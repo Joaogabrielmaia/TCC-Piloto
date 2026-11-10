@@ -1,0 +1,30 @@
+{
+  "task": "HumanEval/96",
+  "generation": 2,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef count_up_to(n):\n    \"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\n    integers that are prime numbers and less than n.\n    for example:\n    count_up_to(5) => [2,3]\n    count_up_to(11) => [2,3,5,7]\n    count_up_to(0) => []\n    count_up_to(20) => [2,3,5,7,11,13,17,19]\n    count_up_to(1) => []\n    count_up_to(18) => [2,3,5,7,11,13,17]\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 17.4,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\nfrom math import isqrt\n\ndef count_up_to(n):\n    \"\"\"Return a list of prime numbers less than n.\"\"\"\n    def is_prime(num):\n        if num < 2:\n            return False\n        if num % 2 == 0:\n            return num == 2\n        for i in range(3, isqrt(num) + 1, 2):\n            if num % i == 0:\n                return False\n        return True\n\n    return [i for i in range(2, n) if is_prime(i)]\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 324,
+    "completion_tokens": 1043,
+    "total_tokens": 1367,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 926
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 324
+  },
+  "timestamp": "2026-11-09T15:18:45Z"
+}

@@ -1,0 +1,144 @@
+{
+  "solucoes": 270,
+  "instaveis": [],
+  "fnd": {
+    "todos": {
+      "n": 270,
+      "passa_oficial": 270,
+      "passa_evalplus": 255,
+      "passa_fronteira": 270,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 270,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 255,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      }
+    },
+    "claude": {
+      "n": 90,
+      "passa_oficial": 90,
+      "passa_evalplus": 87,
+      "passa_fronteira": 90,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 90,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 87,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      }
+    },
+    "openai": {
+      "n": 90,
+      "passa_oficial": 90,
+      "passa_evalplus": 81,
+      "passa_fronteira": 90,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 90,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 81,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      }
+    },
+    "deepseek": {
+      "n": 90,
+      "passa_oficial": 90,
+      "passa_evalplus": 87,
+      "passa_fronteira": 90,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 90,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 87,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 11.4
+      }
+    },
+    "HumanEval": {
+      "n": 135,
+      "passa_oficial": 135,
+      "passa_evalplus": 134,
+      "passa_fronteira": 135,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 135,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 20.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 134,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 20.4
+      }
+    },
+    "MBPP": {
+      "n": 135,
+      "passa_oficial": 135,
+      "passa_evalplus": 121,
+      "passa_fronteira": 135,
+      "fnd_oficial": {
+        "k": 0,
+        "n": 135,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 20.4
+      },
+      "fnd_evalplus": {
+        "k": 0,
+        "n": 121,
+        "pct": 0.0,
+        "ic95_bootstrap_tarefa": null,
+        "tarefas_afetadas": 0,
+        "wilson_sup_por_tarefa": 20.4
+      }
+    }
+  },
+  "mcnemar_oficial_vs_evalplus_aprovacao": {
+    "so_oficial": 15,
+    "so_evalplus": 0,
+    "p": 0.0001
+  },
+  "execucoes_totais": 28170
+}

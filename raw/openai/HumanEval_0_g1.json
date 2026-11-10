@@ -1,0 +1,33 @@
+{
+  "task": "HumanEval/0",
+  "generation": 1,
+  "provider": "openai",
+  "model_requested": "gpt-6.1-sol",
+  "model_returned": "gpt-6.1-sol",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\nfrom typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 11.3,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\nfrom typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    if not threshold > 0:\n        return False\n\n    ordered = sorted(number for number in numbers if number == number)\n    return any(\n        right - left < threshold\n        for left, right in zip(ordered, ordered[1:])\n    )\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 315,
+    "total_tokens": 545,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 227,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "timestamp": "2026-11-09T15:17:49Z"
+}

@@ -1,0 +1,30 @@
+{
+  "task": "HumanEval/122",
+  "generation": 1,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 12.4,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef add_elements(arr, k):\n    return sum(x for x in arr[:k] if abs(x) < 100)\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 306,
+    "completion_tokens": 564,
+    "total_tokens": 870,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 532
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 306
+  },
+  "timestamp": "2026-11-09T15:18:58Z"
+}

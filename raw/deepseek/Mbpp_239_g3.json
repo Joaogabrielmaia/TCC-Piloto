@@ -1,0 +1,30 @@
+{
+  "task": "Mbpp/239",
+  "generation": 3,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\n\"\"\"\nWrite a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.\nassert get_total_number_of_sequences(10, 4) == 4\n\"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 65536,
+  "seconds": 887.1,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\nfrom fractions import Fraction\nfrom math import comb\n\n\ndef _build_sum_power(max_deg):\n    \"\"\"Return S_p(q) = sum_{u=0}^{q} u^p for p = 0..max_deg.\"\"\"\n    sum_power = [[Fraction(1), Fraction(1)]]  # S_0(q) = q + 1\n\n    for p in range(1, max_deg + 1):\n        n = p + 2\n        poly = [Fraction(0)] * n\n\n        # (q + 1)^(p + 1)\n        for j in range(p + 2):\n            poly[j] = Fraction(comb(p + 1, j), 1)\n\n        # subtract lower-degree sums using the telescoping identity\n        for j in range(p):\n            factor = Fraction(comb(p + 1, j), 1)\n            lower = sum_power[j]\n            for deg, coeff in enumerate(lower):\n                poly[deg] -= factor * coeff\n\n        for j in range(n):\n            poly[j] /= (p + 1)\n\n        sum_power.append(poly)\n\n    return sum_power\n\n\ndef _substitute_and_sum(poly, h, sum_power):\n    \"\"\"\n    Given P(x), return sum_{u=0}^{q} P(2u + h)\n    as a polynomial in q.\n    \"\"\"\n    d = len(poly) - 1\n    expanded = [Fraction(0)] * (d + 1)\n\n    for j, c in enumerate(poly):\n        if c == 0:\n            continue\n        for t in range(j + 1):\n            coeff = Fraction(comb(j, t) * (2 ** t) * (h ** (j - t)), 1)\n            expanded[t] += c * coeff\n\n    result = [Fraction(0)] * (d + 2)\n    for t, coeff in enumerate(expanded):\n        if coeff == 0:\n            continue\n        sp = sum_power[t]\n        for deg, val in enumerate(sp):\n            result[deg] += coeff * val\n\n    return result\n\n\ndef get_total_number_of_sequences(m, n):\n    K = n - 1\n\n    # If even the smallest possible last term 2^K exceeds m, no sequence exists.\n    if K >= m.bit_length():\n        return 0\n\n    M = m - (1 << K)\n    Q = M >> K\n    R = M & ((1 << K) - 1)\n\n    sum_power = _build_sum_power(K)\n\n    # P_0(q) = C_0(q) = q + 1\n    P = [Fraction(1), Fraction(1)]\n\n    for i in range(1, K + 1):\n        h = (R >> (i - 1)) & 1\n        P = _substitute_and_sum(P, h, sum_power)\n\n    # Evaluate P(Q) by Horner's method.\n    ans = Fraction(0)\n    for coeff in reversed(P):\n        ans = ans * Q + coeff\n\n    return int(ans)\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 253,
+    "completion_tokens": 64910,
+    "total_tokens": 65163,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 64229
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 125
+  },
+  "timestamp": "2026-11-09T15:43:41Z"
+}

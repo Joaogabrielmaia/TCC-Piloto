@@ -1,0 +1,33 @@
+{
+  "task": "Mbpp/433",
+  "generation": 1,
+  "provider": "openai",
+  "model_requested": "gpt-6.1-sol",
+  "model_returned": "gpt-6.1-sol",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\n\"\"\"\nWrite a function to check whether the entered number is greater than the elements of the given array.\nassert check_greater([1, 2, 3, 4, 5], 4) == False\n\"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 2.3,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef check_greater(arr, number):\n    return all(number > element for element in arr)\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 157,
+    "completion_tokens": 67,
+    "total_tokens": 224,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 35,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "timestamp": "2026-11-09T15:19:01Z"
+}

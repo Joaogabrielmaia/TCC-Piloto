@@ -1,0 +1,164 @@
+tarefa,benchmark,elegivel,origem,limite_joao,motivo_consenso
+HumanEval/0,HumanEval,Sim,concordância,closer ... than given threshold,
+HumanEval/2,HumanEval,Não,consenso,positive e smaller than,Zero não é permitido como entrada.
+HumanEval/3,HumanEval,Sim,concordância,below zero,
+HumanEval/4,HumanEval,Não,concordância,—,
+HumanEval/5,HumanEval,Não,concordância,—,
+HumanEval/6,HumanEval,Não,concordância,maximum two levels (exemplo),
+HumanEval/8,HumanEval,Sim,concordância,Empty sum / empty product,
+HumanEval/9,HumanEval,Não,concordância,maximum element,
+HumanEval/12,HumanEval,Sim,concordância,longest one,
+HumanEval/15,HumanEval,Sim,concordância,0 up to n inclusive,
+HumanEval/19,HumanEval,Não,concordância,from zero to nine,
+HumanEval/20,HumanEval,Sim,consenso,length at least two,Lista com dois elementos é válida.
+HumanEval/21,HumanEval,Sim,concordância,at least two elements,
+HumanEval/24,HumanEval,Não,consenso,largest ... smaller than n,O próprio n não pode ser divisor.
+HumanEval/25,HumanEval,Não,concordância,smallest to largest,
+HumanEval/26,HumanEval,Sim,consenso,more than once,Elementos que aparecem uma vez devem permanecer.
+HumanEval/30,HumanEval,Sim,concordância,positive numbers,
+HumanEval/35,HumanEval,Não,concordância,maximum element,
+HumanEval/36,HumanEval,Sim,concordância,integers less than n,
+HumanEval/40,HumanEval,Não,concordância,sum to zero,
+HumanEval/43,HumanEval,Não,concordância,sum to zero,
+HumanEval/44,HumanEval,Não,consenso,base numbers are less than 10,Base 10 não é permitida.
+HumanEval/52,HumanEval,Sim,concordância,below threshold t,
+HumanEval/59,HumanEval,Não,concordância,largest prime factor; n > 1,
+HumanEval/66,HumanEval,Não,concordância,—,
+HumanEval/68,HumanEval,Sim,consenso,non-negative; smallest even value,Zero é permitido e o exemplo confirma o comportamento.
+HumanEval/69,HumanEval,Sim,concordância,non-empty; positive; greater than or equal,
+HumanEval/70,HumanEval,Não,concordância,minimum e maximum,
+HumanEval/72,HumanEval,Sim,concordância,less than or equal; maximum possible weight,
+HumanEval/73,HumanEval,Não,concordância,minimum number,
+HumanEval/74,HumanEval,Sim,consenso,less than,"Em caso de igualdade, retorna a primeira lista."
+HumanEval/78,HumanEval,Não,concordância,greater than 1,
+HumanEval/80,HumanEval,Sim,concordância,length is at least 3,
+HumanEval/83,HumanEval,Não,concordância,positive integer,
+HumanEval/84,HumanEval,Não,consenso,positive integer,Contradição entre exigir N positivo e permitir zero.
+HumanEval/85,HumanEval,Não,concordância,non-empty; even elements; odd indices,
+HumanEval/88,HumanEval,Sim,consenso,non-negative; odd/even,Zero é permitido e sua paridade está definida.
+HumanEval/90,HumanEval,Não,concordância,2nd smallest; no such element,
+HumanEval/94,HumanEval,Não,concordância,largest prime value,
+HumanEval/95,HumanEval,Sim,consenso,dictionary is empty,Dicionário vazio deve retornar False.
+HumanEval/96,HumanEval,Sim,concordância,non-negative; less than n,
+HumanEval/99,HumanEval,Não,concordância,equidistant; away from zero,
+HumanEval/100,HumanEval,Não,concordância,positive integer; odd/even,
+HumanEval/102,HumanEval,Sim,concordância,"positive; range [x, y] inclusive; even",
+HumanEval/103,HumanEval,Sim,concordância,positive; n is greater than m,
+HumanEval/104,HumanEval,Não,concordância,positive integers; even digit,
+HumanEval/105,HumanEval,Sim,concordância,between 1 and 9 inclusive,
+HumanEval/107,HumanEval,Sim,concordância,"positive integer; range(1, n), inclusive",
+HumanEval/108,HumanEval,Sim,concordância,sum of digits > 0; negative,
+HumanEval/109,HumanEval,Sim,consenso,non-decreasing order,Array vazio deve retornar True.
+HumanEval/110,HumanEval,Não,concordância,only even numbers,
+HumanEval/114,HumanEval,Não,concordância,minimum sum; non-empty sub-array,
+HumanEval/115,HumanEval,Sim,consenso,bucket capacity,Capacidade 1 é permitida e possui exemplo.
+HumanEval/116,HumanEval,Não,consenso,non-negative integers,"O exemplo apresenta negativos, contrariando a restrição."
+HumanEval/117,HumanEval,Sim,consenso,exactly n consonants; empty string,A quantidade exata de consoantes está definida.
+HumanEval/118,HumanEval,Não,concordância,between two consonants; beginning and ending don't count,
+HumanEval/120,HumanEval,Não,consenso,positive integer k; maximum k numbers,Contradição entre exigir k positivo e permitir zero.
+HumanEval/121,HumanEval,Não,concordância,non-empty; odd elements; even positions,
+HumanEval/122,HumanEval,Sim,concordância,at most two digits; first k elements; constraints de tamanho,
+HumanEval/123,HumanEval,Não,concordância,positive integer,
+HumanEval/124,HumanEval,Sim,concordância,not empty; not less than 1 or higher than 31,
+HumanEval/125,HumanEval,Não,concordância,if no whitespace; if no commas (condições explícitas),
+HumanEval/126,HumanEval,Sim,consenso,more than 1 duplicate; no negative numbers,Dois elementos iguais são aceitos; três não.
+HumanEval/128,HumanEval,Sim,consenso,empty arr,Array vazio deve retornar None.
+HumanEval/129,HumanEval,Sim,consenso,"N >= 2; positive integer; range [1, N*N]",N = 2 é permitido e pode ser testado.
+HumanEval/130,HumanEval,Não,consenso,if n is even; if n is odd,"n = 0 é permitido, mas tri(0) não foi definido."
+HumanEval/131,HumanEval,Não,concordância,positive integer; odd digits; all digits are even,
+HumanEval/132,HumanEval,Não,concordância,only square brackets; at least one ... nested,
+HumanEval/133,HumanEval,Não,concordância,—,
+HumanEval/135,HumanEval,Não,concordância,not greater than or equal,
+HumanEval/136,HumanEval,Sim,concordância,negative integers; positive integers; largest/smallest,
+HumanEval/138,HumanEval,Sim,concordância,exactly 4 positive even numbers,
+HumanEval/140,HumanEval,Sim,consenso,more than 2 consecutive spaces,Dois espaços viram underscores; mais de dois viram hífen.
+HumanEval/141,HumanEval,Sim,consenso,condições explícitas de validade do nome do arquivo,Exatamente três dígitos são permitidos.
+HumanEval/144,HumanEval,Não,consenso,positive whole numbers,Numerador e denominador precisam ser positivos.
+HumanEval/146,HumanEval,Sim,concordância,greater than 10; digits ... are odd,
+HumanEval/147,HumanEval,Não,consenso,positive integer; 1 ≤ i ≤ n; i < j < k,n = 0 não é permitido.
+HumanEval/148,HumanEval,Sim,consenso,—,Os planetas extremos não entram na tupla.
+HumanEval/151,HumanEval,Sim,concordância,odd; negative,
+HumanEval/152,HumanEval,Não,concordância,—,
+HumanEval/156,HumanEval,Sim,consenso,positive integer; 1 <= num <= 1000,Os limites 1 e 1000 são permitidos.
+HumanEval/158,HumanEval,Sim,consenso,maximum number of unique characters,Empates são resolvidos pela ordem lexicográfica.
+HumanEval/160,HumanEval,Sim,consenso,basic algebra operations e regras explícitas de operação,Zero é permitido como operando.
+HumanEval/161,HumanEval,Não,concordância,lower to upper / upper to lower,
+HumanEval/162,HumanEval,Sim,concordância,empty string,
+HumanEval/163,HumanEval,Sim,concordância,positive integers; even digits between a and b,
+Mbpp/4,MBPP,Não,concordância,n largest integers,
+Mbpp/7,MBPP,Sim,concordância,at least 4 characters long,
+Mbpp/9,MBPP,Não,consenso,minimum ... (greater than 0),Zero rotações não é permitido.
+Mbpp/56,MBPP,Não,concordância,one less than twice,
+Mbpp/57,MBPP,Não,concordância,largest number,
+Mbpp/62,MBPP,Não,concordância,smallest number,
+Mbpp/63,MBPP,Não,concordância,maximum difference,
+Mbpp/66,MBPP,Sim,concordância,positive numbers,
+Mbpp/94,MBPP,Não,concordância,smallest second value,
+Mbpp/95,MBPP,Não,concordância,smallest list,
+Mbpp/100,MBPP,Não,consenso,next smallest palindrome,Não apresenta limite explícito de entrada.
+Mbpp/116,MBPP,Não,concordância,positive integers,
+Mbpp/120,MBPP,Não,concordância,maximum absolute product,
+Mbpp/125,MBPP,Não,concordância,maximum difference,
+Mbpp/130,MBPP,Não,concordância,maximum frequency,
+Mbpp/133,MBPP,Sim,concordância,negative numbers,
+Mbpp/138,MBPP,Não,concordância,non-zero powers of 2,
+Mbpp/145,MBPP,Não,concordância,maximum difference,
+Mbpp/167,MBPP,Sim,concordância,smallest power ... greater than or equal,
+Mbpp/170,MBPP,Sim,consenso,within a range specified by two indices,O exemplo demonstra a inclusão dos índices extremos.
+Mbpp/223,MBPP,Sim,consenso,more than n/2 times,Exatamente n/2 ocorrências não caracterizam maioria.
+Mbpp/227,MBPP,Não,concordância,minimum of three numbers,
+Mbpp/232,MBPP,Não,concordância,n largest items,
+Mbpp/238,MBPP,Sim,consenso,non-empty substrings,String vazia resulta em zero substrings não vazias.
+Mbpp/239,MBPP,Sim,concordância,positive integers; greater than or equal ... twice; less than or equal to m,
+Mbpp/244,MBPP,Sim,concordância,next ... greater than,
+Mbpp/245,MBPP,Não,concordância,maximum sum; increasing ... decreasing,
+Mbpp/256,MBPP,Sim,concordância,non-negative; less than,
+Mbpp/274,MBPP,Não,concordância,positive integer; even index,
+Mbpp/277,MBPP,Sim,concordância,greater than or equal to n,
+Mbpp/283,MBPP,Sim,concordância,less than or equal,
+Mbpp/286,MBPP,Não,concordância,largest sum,
+Mbpp/290,MBPP,Não,concordância,maximum length,
+Mbpp/294,MBPP,Não,concordância,maximum value,
+Mbpp/299,MBPP,Não,concordância,maximum aggregate,
+Mbpp/306,MBPP,Não,concordância,maximum sum; k > i,
+Mbpp/308,MBPP,Não,concordância,largest products,
+Mbpp/309,MBPP,Não,concordância,maximum of two numbers,
+Mbpp/388,MBPP,Sim,concordância,less than or equal to n,
+Mbpp/391,MBPP,Não,concordância,—,
+Mbpp/392,MBPP,Não,concordância,maximum sum,
+Mbpp/404,MBPP,Não,concordância,minimum of two numbers,
+Mbpp/409,MBPP,Não,concordância,minimum product,
+Mbpp/410,MBPP,Não,concordância,minimum value,
+Mbpp/418,MBPP,Não,concordância,maximum length,
+Mbpp/433,MBPP,Sim,concordância,greater than,
+Mbpp/436,MBPP,Sim,concordância,negative numbers,
+Mbpp/457,MBPP,Não,concordância,minimum length,
+Mbpp/463,MBPP,Não,concordância,maximum product,
+Mbpp/465,MBPP,Não,concordância,empty items,
+Mbpp/468,MBPP,Não,concordância,maximum product,
+Mbpp/476,MBPP,Não,concordância,largest and smallest value,
+Mbpp/477,MBPP,Não,concordância,lower case,
+Mbpp/555,MBPP,Não,concordância,first n natural numbers,
+Mbpp/558,MBPP,Não,concordância,—,
+Mbpp/559,MBPP,Não,concordância,largest contiguous sublist,
+Mbpp/563,MBPP,Não,concordância,—,
+Mbpp/566,MBPP,Sim,concordância,non-negative integer,
+Mbpp/568,MBPP,Não,concordância,N empty dictionaries,
+Mbpp/588,MBPP,Não,concordância,largest and smallest value,
+Mbpp/589,MBPP,Sim,consenso,between two given numbers,O exemplo inclui o limite inferior 1.
+Mbpp/603,MBPP,Sim,consenso,smaller than or equal,A igualdade com o limite é permitida.
+Mbpp/620,MBPP,Não,concordância,largest subset,
+Mbpp/626,MBPP,Não,concordância,—,
+Mbpp/721,MBPP,Não,concordância,—,
+Mbpp/722,MBPP,Não,consenso,minimal height; minimal weight; above the minimum,"O texto exige valores maiores, mas o exemplo aceita igualdade."
+Mbpp/725,MBPP,Não,concordância,—,
+Mbpp/739,MBPP,Não,concordância,smallest ... with n digits,
+Mbpp/745,MBPP,Sim,consenso,within a given range; divisible by every digit,O exemplo inclui os extremos 1 e 22.
+Mbpp/748,MBPP,Não,concordância,—,
+Mbpp/753,MBPP,Não,concordância,minimum k records,
+Mbpp/755,MBPP,Não,concordância,second smallest,
+Mbpp/763,MBPP,Não,concordância,minimum difference,
+Mbpp/769,MBPP,Não,concordância,—,
+Mbpp/797,MBPP,Não,consenso,odd natural numbers within the range,Não esclarece completamente a inclusão dos extremos.
+Mbpp/806,MBPP,Não,concordância,maximum run,
+Mbpp/809,MBPP,Sim,consenso,smaller than,Igualdade não satisfaz a condição de menor que.

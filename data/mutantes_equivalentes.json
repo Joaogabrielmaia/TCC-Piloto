@@ -1,0 +1,16 @@
+{
+ "HumanEval_68_m1": "o laço retorna antes de chegar ao índice extra",
+ "HumanEval_96_m8": "marca n no crivo, mas n nunca entra na saída (primos menores que n)",
+ "HumanEval_96_m10": "começa a marcar em 0; só afeta índices 0 e i, já tratados",
+ "HumanEval_163_m1": "trocar a e b quando são iguais não muda nada",
+ "Mbpp_239_m6": "linha extra na tabela não é lida",
+ "Mbpp_239_m9": "a coluna 0 nunca é lida para n >= 1 (n é positivo)",
+ "Mbpp_239_m10": "linha extra na tabela não é lida",
+ "Mbpp_239_m14": "i == -1 nunca ocorre; i = 0 cai em i < j e vale 0",
+ "Mbpp_239_m16": "i == -1 nunca ocorre; i = 0 cai em i < j e vale 0",
+ "Mbpp_256_m10": "i % (i-1) nunca é 0 para i > 2, então tirar j = i-1 não muda nada",
+ "Mbpp_589_m1": "trocar a e b quando são iguais não muda nada",
+ "Mbpp_589_m4": "b = -1 segue e produz a mesma lista vazia",
+ "Mbpp_589_m5": "a = 0 vira 0 de qualquer forma",
+ "Mbpp_589_m6": "para inteiros, a < 1 equivale a a <= 0, e a vira 0 de qualquer forma"
+}

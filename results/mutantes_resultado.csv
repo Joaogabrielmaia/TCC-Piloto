@@ -1,0 +1,167 @@
+mid,task,op,grupo,desc,mata_oficial,mata_fronteira,mata_evalplus,mata_ofi_front,sobrevive_todas
+HumanEval_0_m1,HumanEval/0,RNG,fronteira,RNG: range arg0 +1 (linha 15),True,True,True,True,False
+HumanEval_0_m2,HumanEval/0,RNG,fronteira,RNG: range arg0 -1 (linha 15),True,True,True,True,False
+HumanEval_0_m3,HumanEval/0,AOR,generico,AOR: - -> + (linha 15),True,True,True,True,False
+HumanEval_0_m4,HumanEval/0,ROR,fronteira,ROR: < -> <= (linha 16),False,True,True,True,False
+HumanEval_0_m5,HumanEval/0,AOR,generico,AOR: - -> + (linha 16),True,True,True,True,False
+HumanEval_0_m6,HumanEval/0,AOR,generico,AOR: + -> - (linha 16),True,False,True,True,False
+HumanEval_12_m1,HumanEval/12,NEG,generico,NEG: remove not (linha 15),True,True,True,True,False
+HumanEval_21_m1,HumanEval/21,AOR,generico,AOR: - -> + (linha 13),True,True,True,True,False
+HumanEval_21_m2,HumanEval/21,AOR,generico,AOR: - -> + (linha 14),True,True,True,True,False
+HumanEval_30_m1,HumanEval/30,ROR,fronteira,ROR: > -> >= (linha 11),True,True,True,True,False
+HumanEval_30_m2,HumanEval/30,CON,fronteira,CON: constante 0 -> 1 (linha 11),True,True,True,True,False
+HumanEval_30_m3,HumanEval/30,CON,fronteira,CON: constante 0 -> -1 (linha 11),True,True,True,True,False
+HumanEval_68_m2,HumanEval/68,RNG,fronteira,RNG: range arg0 -1 (linha 40),False,True,True,True,False
+HumanEval_68_m3,HumanEval/68,CON,fronteira,CON: constante 1 -> 2 (linha 38),True,True,True,True,False
+HumanEval_68_m4,HumanEval/68,CON,fronteira,CON: constante 1 -> 0 (linha 38),True,True,True,True,False
+HumanEval_68_m5,HumanEval/68,CON,fronteira,CON: constante 0 -> 1 (linha 39),True,True,True,True,False
+HumanEval_68_m6,HumanEval/68,CON,fronteira,CON: constante 0 -> -1 (linha 39),True,True,True,True,False
+HumanEval_72_m1,HumanEval/72,LCR,generico,LCR: and -> or (linha 21),True,True,True,True,False
+HumanEval_72_m2,HumanEval/72,ROR,fronteira,ROR: <= -> < (linha 21),True,True,True,True,False
+HumanEval_80_m1,HumanEval/80,ROR,fronteira,ROR: < -> <= (linha 15),True,True,True,True,False
+HumanEval_80_m2,HumanEval/80,CON,fronteira,CON: constante 3 -> 4 (linha 15),True,True,True,True,False
+HumanEval_80_m3,HumanEval/80,CON,fronteira,CON: constante 3 -> 2 (linha 15),True,True,True,True,False
+HumanEval_80_m4,HumanEval/80,RNG,fronteira,RNG: range arg0 +1 (linha 16),True,True,True,True,False
+HumanEval_80_m5,HumanEval/80,RNG,fronteira,RNG: range arg0 -1 (linha 16),True,False,True,True,False
+HumanEval_80_m6,HumanEval/80,AOR,generico,AOR: - -> + (linha 16),True,True,True,True,False
+HumanEval_80_m7,HumanEval/80,LCR,generico,LCR: or -> and (linha 17),True,False,True,True,False
+HumanEval_80_m8,HumanEval/80,AOR,generico,AOR: + -> - (linha 17),True,False,True,True,False
+HumanEval_80_m9,HumanEval/80,AOR,generico,AOR: + -> - (linha 17),True,False,True,True,False
+HumanEval_80_m10,HumanEval/80,AOR,generico,AOR: + -> - (linha 17),True,True,True,True,False
+HumanEval_80_m11,HumanEval/80,AOR,generico,AOR: + -> - (linha 17),True,True,True,True,False
+HumanEval_96_m1,HumanEval/96,RNG,fronteira,RNG: range arg0 +1 (linha 17),True,True,True,True,False
+HumanEval_96_m2,HumanEval/96,RNG,fronteira,RNG: range arg0 -1 (linha 17),True,True,True,True,False
+HumanEval_96_m3,HumanEval/96,RNG,fronteira,RNG: range arg1 +1 (linha 17),True,True,True,True,False
+HumanEval_96_m4,HumanEval/96,RNG,fronteira,RNG: range arg1 -1 (linha 17),True,True,True,True,False
+HumanEval_96_m5,HumanEval/96,AOR,generico,AOR: + -> - (linha 16),True,True,True,True,False
+HumanEval_96_m6,HumanEval/96,RNG,fronteira,RNG: range arg0 +1 (linha 20),True,True,True,True,False
+HumanEval_96_m7,HumanEval/96,RNG,fronteira,RNG: range arg0 -1 (linha 20),True,True,True,True,False
+HumanEval_96_m9,HumanEval/96,RNG,fronteira,RNG: range arg1 -1 (linha 20),True,True,True,True,False
+HumanEval_108_m1,HumanEval/108,ROR,fronteira,ROR: > -> >= (linha 21),True,True,True,True,False
+HumanEval_108_m2,HumanEval/108,CON,fronteira,CON: constante 0 -> 1 (linha 21),True,True,True,True,False
+HumanEval_108_m3,HumanEval/108,CON,fronteira,CON: constante 0 -> -1 (linha 21),True,True,True,True,False
+HumanEval_122_m1,HumanEval/122,AOR,generico,AOR: - -> + (linha 20),True,False,True,True,False
+HumanEval_122_m2,HumanEval/122,ROR,fronteira,ROR: <= -> < (linha 21),True,True,True,True,False
+HumanEval_122_m3,HumanEval/122,CON,fronteira,CON: constante 2 -> 3 (linha 21),True,True,True,True,False
+HumanEval_122_m4,HumanEval/122,CON,fronteira,CON: constante 2 -> 1 (linha 21),True,True,True,True,False
+HumanEval_126_m1,HumanEval/126,AOR,generico,AOR: + -> - (linha 23),True,True,True,True,False
+HumanEval_126_m2,HumanEval/126,ROR,fronteira,ROR: > -> >= (linha 24),True,True,True,True,False
+HumanEval_126_m3,HumanEval/126,CON,fronteira,CON: constante 2 -> 3 (linha 24),True,True,True,True,False
+HumanEval_126_m4,HumanEval/126,CON,fronteira,CON: constante 2 -> 1 (linha 24),True,True,True,True,False
+HumanEval_129_m1,HumanEval/129,RNG,fronteira,RNG: range arg0 +1 (linha 36),True,True,True,True,False
+HumanEval_129_m2,HumanEval/129,RNG,fronteira,RNG: range arg0 -1 (linha 36),True,False,True,True,False
+HumanEval_129_m3,HumanEval/129,ROR,fronteira,ROR: > -> >= (linha 41),True,False,True,True,False
+HumanEval_129_m4,HumanEval/129,CON,fronteira,CON: constante 0 -> 1 (linha 41),True,False,True,True,False
+HumanEval_129_m5,HumanEval/129,CON,fronteira,CON: constante 0 -> -1 (linha 41),True,False,True,True,False
+HumanEval_129_m6,HumanEval/129,ROR,fronteira,ROR: < -> <= (linha 42),True,True,True,True,False
+HumanEval_129_m7,HumanEval/129,ROR,fronteira,ROR: > -> >= (linha 43),False,False,True,False,False
+HumanEval_129_m8,HumanEval/129,CON,fronteira,CON: constante 0 -> 1 (linha 43),True,True,True,True,False
+HumanEval_129_m9,HumanEval/129,CON,fronteira,CON: constante 0 -> -1 (linha 43),False,False,True,False,False
+HumanEval_129_m10,HumanEval/129,ROR,fronteira,ROR: < -> <= (linha 44),True,True,True,True,False
+HumanEval_129_m11,HumanEval/129,RNG,fronteira,RNG: range arg0 +1 (linha 37),True,True,True,True,False
+HumanEval_129_m12,HumanEval/129,RNG,fronteira,RNG: range arg0 -1 (linha 37),True,False,True,True,False
+HumanEval_129_m13,HumanEval/129,AOR,generico,AOR: - -> + (linha 42),True,True,True,True,False
+HumanEval_129_m14,HumanEval/129,AOR,generico,AOR: - -> + (linha 44),True,True,True,True,False
+HumanEval_129_m15,HumanEval/129,CON,fronteira,CON: constante 1 -> 2 (linha 38),True,True,True,True,False
+HumanEval_129_m16,HumanEval/129,CON,fronteira,CON: constante 1 -> 0 (linha 38),True,False,True,True,False
+HumanEval_129_m17,HumanEval/129,CON,fronteira,CON: constante 0 -> 1 (linha 45),True,True,True,True,False
+HumanEval_129_m18,HumanEval/129,CON,fronteira,CON: constante 0 -> -1 (linha 45),True,True,True,True,False
+HumanEval_129_m19,HumanEval/129,RNG,fronteira,RNG: range arg0 +1 (linha 45),True,True,True,True,False
+HumanEval_129_m20,HumanEval/129,RNG,fronteira,RNG: range arg0 -1 (linha 45),True,True,True,True,False
+HumanEval_129_m21,HumanEval/129,AOR,generico,AOR: - -> + (linha 43),True,True,True,True,False
+HumanEval_129_m22,HumanEval/129,AOR,generico,AOR: + -> - (linha 44),True,False,True,True,False
+HumanEval_129_m23,HumanEval/129,AOR,generico,AOR: - -> + (linha 41),True,True,True,True,False
+HumanEval_129_m24,HumanEval/129,AOR,generico,AOR: + -> - (linha 42),True,False,True,True,False
+HumanEval_136_m1,HumanEval/136,ROR,fronteira,ROR: < -> <= (linha 15),True,True,True,True,False
+HumanEval_136_m2,HumanEval/136,CON,fronteira,CON: constante 0 -> 1 (linha 15),True,True,True,True,False
+HumanEval_136_m3,HumanEval/136,CON,fronteira,CON: constante 0 -> -1 (linha 15),True,True,True,True,False
+HumanEval_136_m4,HumanEval/136,ROR,fronteira,ROR: > -> >= (linha 16),True,True,True,True,False
+HumanEval_136_m5,HumanEval/136,CON,fronteira,CON: constante 0 -> 1 (linha 16),True,True,True,True,False
+HumanEval_136_m6,HumanEval/136,CON,fronteira,CON: constante 0 -> -1 (linha 16),True,True,True,True,False
+HumanEval_156_m1,HumanEval/156,AOR,generico,AOR: + -> - (linha 23),True,True,True,True,False
+HumanEval_156_m2,HumanEval/156,AOR,generico,AOR: + -> - (linha 23),True,True,True,True,False
+HumanEval_156_m3,HumanEval/156,AOR,generico,AOR: + -> - (linha 23),True,True,True,True,False
+HumanEval_163_m2,HumanEval/163,RNG,fronteira,RNG: range arg0 +1 (linha 15),True,True,True,True,False
+HumanEval_163_m3,HumanEval/163,RNG,fronteira,RNG: range arg0 -1 (linha 15),False,True,True,True,False
+HumanEval_163_m4,HumanEval/163,RNG,fronteira,RNG: range arg1 +1 (linha 15),True,True,True,True,False
+HumanEval_163_m5,HumanEval/163,RNG,fronteira,RNG: range arg1 -1 (linha 15),False,True,True,True,False
+HumanEval_163_m6,HumanEval/163,CON,fronteira,CON: constante 0 -> 1 (linha 15),True,True,True,True,False
+HumanEval_163_m7,HumanEval/163,CON,fronteira,CON: constante 0 -> -1 (linha 15),True,True,True,True,False
+HumanEval_163_m8,HumanEval/163,AOR,generico,AOR: + -> - (linha 15),False,True,True,True,False
+Mbpp_66_m1,Mbpp/66,ROR,fronteira,ROR: > -> >= (linha 3),False,True,True,True,False
+Mbpp_66_m2,Mbpp/66,CON,fronteira,CON: constante 0 -> 1 (linha 3),True,True,True,True,False
+Mbpp_66_m3,Mbpp/66,CON,fronteira,CON: constante 0 -> -1 (linha 3),False,True,True,True,False
+Mbpp_167_m1,Mbpp/167,LCR,generico,LCR: and -> or (linha 3),True,True,True,True,False
+Mbpp_167_m2,Mbpp/167,CON,fronteira,CON: constante 0 -> 1 (linha 6),True,True,True,True,False
+Mbpp_167_m3,Mbpp/167,CON,fronteira,CON: constante 0 -> -1 (linha 6),True,True,True,True,False
+Mbpp_167_m4,Mbpp/167,NEG,generico,NEG: remove not (linha 3),True,True,True,True,False
+Mbpp_167_m5,Mbpp/167,AOR,generico,AOR: - -> + (linha 3),False,True,True,True,False
+Mbpp_223_m1,Mbpp/223,ROR,fronteira,ROR: > -> >= (linha 8),False,True,True,True,False
+Mbpp_223_m2,Mbpp/223,AOR,generico,AOR: - -> + (linha 8),True,False,True,True,False
+Mbpp_238_m1,Mbpp/238,AOR,generico,AOR: + -> - (linha 4),True,True,True,True,False
+Mbpp_239_m1,Mbpp/239,RNG,fronteira,RNG: range arg0 +1 (linha 4),True,True,True,True,False
+Mbpp_239_m2,Mbpp/239,RNG,fronteira,RNG: range arg0 -1 (linha 4),True,True,True,True,False
+Mbpp_239_m3,Mbpp/239,AOR,generico,AOR: + -> - (linha 4),True,True,True,True,False
+Mbpp_239_m4,Mbpp/239,RNG,fronteira,RNG: range arg0 +1 (linha 5),True,True,True,True,False
+Mbpp_239_m5,Mbpp/239,RNG,fronteira,RNG: range arg0 -1 (linha 5),True,True,True,True,False
+Mbpp_239_m7,Mbpp/239,RNG,fronteira,RNG: range arg0 -1 (linha 3),True,True,True,True,False
+Mbpp_239_m8,Mbpp/239,AOR,generico,AOR: + -> - (linha 5),True,True,True,True,False
+Mbpp_239_m11,Mbpp/239,RNG,fronteira,RNG: range arg0 -1 (linha 3),True,True,True,True,False
+Mbpp_239_m12,Mbpp/239,AOR,generico,AOR: + -> - (linha 3),True,True,True,True,False
+Mbpp_239_m13,Mbpp/239,CON,fronteira,CON: constante 0 -> 1 (linha 6),True,True,True,True,False
+Mbpp_239_m15,Mbpp/239,CON,fronteira,CON: constante 0 -> 1 (linha 6),True,True,True,True,False
+Mbpp_239_m17,Mbpp/239,ROR,fronteira,ROR: < -> <= (linha 8),True,True,True,True,False
+Mbpp_239_m18,Mbpp/239,AOR,generico,AOR: + -> - (linha 3),True,True,True,True,False
+Mbpp_239_m19,Mbpp/239,CON,fronteira,CON: constante 1 -> 2 (linha 10),True,True,True,True,False
+Mbpp_239_m20,Mbpp/239,CON,fronteira,CON: constante 1 -> 0 (linha 10),True,True,True,True,False
+Mbpp_239_m21,Mbpp/239,AOR,generico,AOR: + -> - (linha 13),True,True,True,True,False
+Mbpp_239_m22,Mbpp/239,AOR,generico,AOR: - -> + (linha 13),True,True,True,True,False
+Mbpp_239_m23,Mbpp/239,AOR,generico,AOR: - -> + (linha 13),True,True,True,True,False
+Mbpp_244_m1,Mbpp/244,ROR,fronteira,ROR: < -> <= (linha 4),False,False,True,False,False
+Mbpp_244_m2,Mbpp/244,CON,fronteira,CON: constante 0 -> 1 (linha 4),False,False,True,False,False
+Mbpp_244_m3,Mbpp/244,CON,fronteira,CON: constante 0 -> -1 (linha 4),False,False,True,False,False
+Mbpp_244_m4,Mbpp/244,AOR,generico,AOR: + -> - (linha 6),True,True,True,True,False
+Mbpp_256_m1,Mbpp/256,RNG,fronteira,RNG: range arg0 +1 (linha 3),True,True,True,True,False
+Mbpp_256_m2,Mbpp/256,RNG,fronteira,RNG: range arg0 -1 (linha 3),True,True,True,True,False
+Mbpp_256_m3,Mbpp/256,RNG,fronteira,RNG: range arg1 +1 (linha 3),True,True,True,True,False
+Mbpp_256_m4,Mbpp/256,RNG,fronteira,RNG: range arg1 -1 (linha 3),False,True,True,True,False
+Mbpp_256_m5,Mbpp/256,CON,fronteira,CON: constante 0 -> 1 (linha 3),True,True,True,True,False
+Mbpp_256_m6,Mbpp/256,CON,fronteira,CON: constante 0 -> -1 (linha 3),True,True,True,True,False
+Mbpp_256_m7,Mbpp/256,RNG,fronteira,RNG: range arg0 +1 (linha 3),True,True,True,True,False
+Mbpp_256_m8,Mbpp/256,RNG,fronteira,RNG: range arg0 -1 (linha 3),True,True,True,True,False
+Mbpp_256_m9,Mbpp/256,RNG,fronteira,RNG: range arg1 +1 (linha 3),True,True,True,True,False
+Mbpp_277_m1,Mbpp/277,ROR,fronteira,ROR: >= -> > (linha 3),True,True,True,True,False
+Mbpp_283_m1,Mbpp/283,ROR,fronteira,ROR: >= -> > (linha 4),True,True,True,True,False
+Mbpp_388_m1,Mbpp/388,ROR,fronteira,ROR: <= -> < (linha 4),True,True,True,True,False
+Mbpp_388_m2,Mbpp/388,AOR,generico,AOR: + -> - (linha 5),True,True,True,True,False
+Mbpp_388_m3,Mbpp/388,AOR,generico,AOR: - -> + (linha 6),True,True,True,True,False
+Mbpp_433_m1,Mbpp/433,ROR,fronteira,ROR: > -> >= (linha 3),False,True,True,True,False
+Mbpp_589_m2,Mbpp/589,ROR,fronteira,ROR: < -> <= (linha 6),False,False,True,False,False
+Mbpp_589_m3,Mbpp/589,CON,fronteira,CON: constante 0 -> 1 (linha 6),False,False,True,False,False
+Mbpp_589_m7,Mbpp/589,CON,fronteira,CON: constante 0 -> -1 (linha 8),False,False,True,False,False
+Mbpp_589_m8,Mbpp/589,RNG,fronteira,RNG: range arg0 +1 (linha 10),True,True,True,True,False
+Mbpp_589_m9,Mbpp/589,RNG,fronteira,RNG: range arg0 -1 (linha 10),True,True,True,True,False
+Mbpp_589_m10,Mbpp/589,RNG,fronteira,RNG: range arg1 +1 (linha 10),False,True,True,True,False
+Mbpp_589_m11,Mbpp/589,RNG,fronteira,RNG: range arg1 -1 (linha 10),True,False,True,True,False
+Mbpp_589_m12,Mbpp/589,AOR,generico,AOR: + -> - (linha 10),True,True,True,True,False
+Mbpp_603_m1,Mbpp/603,RNG,fronteira,RNG: range arg0 +1 (linha 4),True,True,True,True,False
+Mbpp_603_m2,Mbpp/603,RNG,fronteira,RNG: range arg0 -1 (linha 4),True,True,True,True,False
+Mbpp_603_m3,Mbpp/603,RNG,fronteira,RNG: range arg1 +1 (linha 4),True,True,True,True,False
+Mbpp_603_m4,Mbpp/603,RNG,fronteira,RNG: range arg1 -1 (linha 4),True,True,True,True,False
+Mbpp_603_m5,Mbpp/603,AOR,generico,AOR: + -> - (linha 13),True,True,True,True,False
+Mbpp_603_m6,Mbpp/603,AOR,generico,AOR: + -> - (linha 4),True,True,True,True,False
+Mbpp_603_m7,Mbpp/603,AOR,generico,AOR: + -> - (linha 9),True,True,True,True,False
+Mbpp_603_m8,Mbpp/603,ROR,fronteira,ROR: < -> <= (linha 10),True,True,True,True,False
+Mbpp_603_m9,Mbpp/603,AOR,generico,AOR: - -> + (linha 12),True,True,True,True,False
+Mbpp_603_m10,Mbpp/603,AOR,generico,AOR: + -> - (linha 12),True,True,True,True,False
+Mbpp_745_m1,Mbpp/745,RNG,fronteira,RNG: range arg0 +1 (linha 3),True,True,True,True,False
+Mbpp_745_m2,Mbpp/745,RNG,fronteira,RNG: range arg0 -1 (linha 3),False,True,True,True,False
+Mbpp_745_m3,Mbpp/745,RNG,fronteira,RNG: range arg1 +1 (linha 3),False,True,True,True,False
+Mbpp_745_m4,Mbpp/745,RNG,fronteira,RNG: range arg1 -1 (linha 3),True,True,True,True,False
+Mbpp_745_m5,Mbpp/745,NEG,generico,NEG: remove not (linha 4),True,True,True,True,False
+Mbpp_745_m6,Mbpp/745,AOR,generico,AOR: + -> - (linha 3),True,True,True,True,False
+Mbpp_745_m7,Mbpp/745,LCR,generico,LCR: or -> and (linha 4),True,True,True,True,False
+Mbpp_745_m8,Mbpp/745,CON,fronteira,CON: constante 0 -> 1 (linha 4),True,True,True,True,False
+Mbpp_745_m9,Mbpp/745,CON,fronteira,CON: constante 0 -> -1 (linha 4),True,False,True,True,False
+Mbpp_745_m10,Mbpp/745,CON,fronteira,CON: constante 0 -> 1 (linha 4),True,True,True,True,False
+Mbpp_745_m11,Mbpp/745,CON,fronteira,CON: constante 0 -> -1 (linha 4),True,True,True,True,False

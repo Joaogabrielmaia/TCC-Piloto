@@ -1,0 +1,33 @@
+{
+  "task": "HumanEval/129",
+  "generation": 3,
+  "provider": "openai",
+  "model_requested": "gpt-6.1-sol",
+  "model_returned": "gpt-6.1-sol",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef minPath(grid, k):\n    \"\"\"\n    Given a grid with N rows and N columns (N >= 2) and a positive integer k, \n    each cell of the grid contains a value. Every integer in the range [1, N * N]\n    inclusive appears exactly once on the cells of the grid.\n\n    You have to find the minimum path of length k in the grid. You can start\n    from any cell, and in each step you can move to any of the neighbor cells,\n    in other words, you can go to cells which share an edge with you current\n    cell.\n    Please note that a path of length k means visiting exactly k cells (not\n    necessarily distinct).\n    You CANNOT go off the grid.\n    A path A (of length k) is considered less than a path B (of length k) if\n    after making the ordered lists of the values on the cells that A and B go\n    through (let's call them lst_A and lst_B), lst_A is lexicographically less\n    than lst_B, in other words, there exist an integer index i (1 <= i <= k)\n    such that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\n    lst_A[j] = lst_B[j].\n    It is guaranteed that the answer is unique.\n    Return an ordered list of the values on the cells that the minimum path go through.\n\n    Examples:\n\n        Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3\n        Output: [1, 2, 1]\n\n        Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1\n        Output: [1]\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 4.7,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef minPath(grid, k):\n    if k == 1:\n        return [1]\n\n    n = len(grid)\n    row, col = next(\n        (r, c)\n        for r, values in enumerate(grid)\n        for c, value in enumerate(values)\n        if value == 1\n    )\n    neighbor = min(\n        grid[r][c]\n        for r, c in (\n            (row - 1, col),\n            (row + 1, col),\n            (row, col - 1),\n            (row, col + 1),\n        )\n        if 0 <= r < n and 0 <= c < n\n    )\n    return [1, neighbor] * (k // 2) + ([1] if k % 2 else [])\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 501,
+    "completion_tokens": 274,
+    "total_tokens": 775,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 97,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "timestamp": "2026-11-09T15:18:22Z"
+}

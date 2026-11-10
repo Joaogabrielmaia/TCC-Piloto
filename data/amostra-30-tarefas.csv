@@ -1,0 +1,31 @@
+tarefa,benchmark,limite_joao,motivo_consenso,semente
+HumanEval/0,HumanEval,closer ... than given threshold,,20261109
+HumanEval/12,HumanEval,longest one,,20261109
+HumanEval/21,HumanEval,at least two elements,,20261109
+HumanEval/30,HumanEval,positive numbers,,20261109
+HumanEval/68,HumanEval,non-negative; smallest even value,Zero é permitido e o exemplo confirma o comportamento.,20261109
+HumanEval/72,HumanEval,less than or equal; maximum possible weight,,20261109
+HumanEval/80,HumanEval,length is at least 3,,20261109
+HumanEval/96,HumanEval,non-negative; less than n,,20261109
+HumanEval/108,HumanEval,sum of digits > 0; negative,,20261109
+HumanEval/122,HumanEval,at most two digits; first k elements; constraints de tamanho,,20261109
+HumanEval/126,HumanEval,more than 1 duplicate; no negative numbers,Dois elementos iguais são aceitos; três não.,20261109
+HumanEval/129,HumanEval,"N >= 2; positive integer; range [1, N*N]",N = 2 é permitido e pode ser testado.,20261109
+HumanEval/136,HumanEval,negative integers; positive integers; largest/smallest,,20261109
+HumanEval/156,HumanEval,positive integer; 1 <= num <= 1000,Os limites 1 e 1000 são permitidos.,20261109
+HumanEval/163,HumanEval,positive integers; even digits between a and b,,20261109
+Mbpp/66,MBPP,positive numbers,,20261109
+Mbpp/167,MBPP,smallest power ... greater than or equal,,20261109
+Mbpp/223,MBPP,more than n/2 times,Exatamente n/2 ocorrências não caracterizam maioria.,20261109
+Mbpp/238,MBPP,non-empty substrings,String vazia resulta em zero substrings não vazias.,20261109
+Mbpp/239,MBPP,positive integers; greater than or equal ... twice; less than or equal to m,,20261109
+Mbpp/244,MBPP,next ... greater than,,20261109
+Mbpp/256,MBPP,non-negative; less than,,20261109
+Mbpp/277,MBPP,greater than or equal to n,,20261109
+Mbpp/283,MBPP,less than or equal,,20261109
+Mbpp/388,MBPP,less than or equal to n,,20261109
+Mbpp/433,MBPP,greater than,,20261109
+Mbpp/566,MBPP,non-negative integer,,20261109
+Mbpp/589,MBPP,between two given numbers,O exemplo inclui o limite inferior 1.,20261109
+Mbpp/603,MBPP,smaller than or equal,A igualdade com o limite é permitida.,20261109
+Mbpp/745,MBPP,within a given range; divisible by every digit,O exemplo inclui os extremos 1 e 22.,20261109

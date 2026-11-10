@@ -1,0 +1,33 @@
+{
+  "task": "Mbpp/745",
+  "generation": 1,
+  "provider": "claude",
+  "model_requested": "claude-opus-5-5",
+  "model_returned": "claude-opus-5-5",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\n\"\"\"\nWrite a function to find numbers within a given range from startnum ti endnum where every number is divisible by every digit it contains. \nassert divisible_by_digits(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]\n\"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 1.8,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef divisible_by_digits(startnum, endnum):\n    result = []\n    for n in range(startnum, endnum + 1):\n        digits = str(abs(n))\n        ok = True\n        for ch in digits:\n            d = int(ch)\n            if d == 0 or n % d != 0:\n                ok = False\n                break\n        if ok:\n            result.append(n)\n    return result\n```",
+  "finish": "end_turn",
+  "usage": {
+    "input_tokens": 263,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 127,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "timestamp": "2026-11-09T15:23:10Z"
+}

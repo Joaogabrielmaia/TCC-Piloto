@@ -1,0 +1,30 @@
+{
+  "task": "HumanEval/80",
+  "generation": 3,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef is_happy(s):\n    \"\"\"You are given a string s.\n    Your task is to check if the string is happy or not.\n    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n    For example:\n    is_happy(a) => False\n    is_happy(aa) => False\n    is_happy(abcd) => True\n    is_happy(aabb) => False\n    is_happy(adb) => True\n    is_happy(xyy) => False\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 5.2,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef is_happy(s):\n    if len(s) < 3:\n        return False\n    return all(len(set(s[i:i+3])) == 3 for i in range(len(s) - 2))\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 301,
+    "completion_tokens": 322,
+    "total_tokens": 623,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 273
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 45
+  },
+  "timestamp": "2026-11-09T15:18:30Z"
+}

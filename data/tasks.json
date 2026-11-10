@@ -1,0 +1,2058 @@
+[
+  {
+    "id": "HumanEval/0",
+    "entry": "has_close_elements",
+    "excerpt": "are any two numbers closer to each other than given threshold",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            1.0,
+            2.0
+          ],
+          1.0
+        ],
+        "expected": false,
+        "kind": "no limite",
+        "why": "distância 1.0 igual ao limiar: não é 'closer than'.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1.0,
+            2.0
+          ],
+          1.25
+        ],
+        "expected": true,
+        "kind": "vizinho acima",
+        "why": "limiar maior que a distância: são mais próximos.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            1.0,
+            2.0
+          ],
+          0.75
+        ],
+        "expected": false,
+        "kind": "vizinho abaixo",
+        "why": "limiar menor que a distância.",
+        "expected_repr": "False"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n",
+    "reference": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n\n\n    sorted_numbers = sorted(numbers)\n    for i in range(len(sorted_numbers) - 1):\n        if sorted_numbers[i + 1] - sorted_numbers[i] < threshold:\n            return True\n    return False\n\n",
+    "official": [
+      "assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3) == True",
+      "assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05) == False",
+      "assert candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.95) == True",
+      "assert candidate([1.0, 2.0, 5.9, 4.0, 5.0], 0.8) == False",
+      "assert candidate([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], 0.1) == True",
+      "assert candidate([1.1, 2.2, 3.1, 4.1, 5.1], 1.0) == True",
+      "assert candidate([1.1, 2.2, 3.1, 4.1, 5.1], 0.5) == False"
+    ],
+    "n_evalplus": 1006
+  },
+  {
+    "id": "HumanEval/12",
+    "entry": "longest",
+    "excerpt": "Return the first one in case of multiple strings of the same length.",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            "ab",
+            "cd"
+          ]
+        ],
+        "expected": "ab",
+        "kind": "no limite",
+        "why": "empate de tamanho: devolve a primeira.",
+        "expected_repr": "'ab'"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            "ab",
+            "cde"
+          ]
+        ],
+        "expected": "cde",
+        "kind": "vizinho acima",
+        "why": "a segunda é uma letra maior.",
+        "expected_repr": "'cde'"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            "abc",
+            "de"
+          ]
+        ],
+        "expected": "abc",
+        "kind": "vizinho abaixo",
+        "why": "a segunda é uma letra menor.",
+        "expected_repr": "'abc'"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            "x"
+          ]
+        ],
+        "expected": "x",
+        "kind": "extremo",
+        "why": "lista com uma só string.",
+        "expected_repr": "'x'"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n\n    >>> longest(['a', 'b', 'c'])\n    'a'\n    >>> longest(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n",
+    "reference": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n\n    >>> longest(['a', 'b', 'c'])\n    'a'\n    >>> longest(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n\n    if not strings:\n        return None\n\n    maxlen = max(len(x) for x in strings)\n    for s in strings:\n        if len(s) == maxlen:\n            return s\n\n",
+    "official": [
+      "assert candidate([]) == None",
+      "assert candidate(['x', 'y', 'z']) == 'x'",
+      "assert candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']) == 'zzzz'"
+    ],
+    "n_evalplus": 936
+  },
+  {
+    "id": "HumanEval/21",
+    "entry": "rescale_to_unit",
+    "excerpt": "Given list of numbers (of at least two elements) ... smallest will become 0 and the largest will become 1",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            2.0,
+            6.0
+          ]
+        ],
+        "expected": [
+          0.0,
+          1.0
+        ],
+        "kind": "no limite",
+        "why": "exatamente dois elementos (mínimo permitido).",
+        "expected_repr": "[0.0, 1.0]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            6.0,
+            2.0
+          ]
+        ],
+        "expected": [
+          1.0,
+          0.0
+        ],
+        "kind": "no limite",
+        "why": "dois elementos com o maior primeiro.",
+        "expected_repr": "[1.0, 0.0]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            2.0,
+            4.0,
+            6.0
+          ]
+        ],
+        "expected": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "kind": "vizinho acima",
+        "why": "três elementos.",
+        "expected_repr": "[0.0, 0.5, 1.0]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "from typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n",
+    "reference": "from typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n\n\n    ma, mi = max(numbers), min(numbers)\n    k = 1 / (ma - mi)\n    return list(map(lambda x: (x - mi) * k, numbers))\n\n",
+    "official": [
+      "assert candidate([2.0, 49.9]) == [0.0, 1.0]",
+      "assert candidate([100.0, 49.9]) == [1.0, 0.0]",
+      "assert candidate([1.0, 2.0, 3.0, 4.0, 5.0]) == [0.0, 0.25, 0.5, 0.75, 1.0]",
+      "assert candidate([2.0, 1.0, 5.0, 3.0, 4.0]) == [0.25, 0.0, 1.0, 0.5, 0.75]",
+      "assert candidate([12.0, 11.0, 15.0, 13.0, 14.0]) == [0.25, 0.0, 1.0, 0.5, 0.75]"
+    ],
+    "n_evalplus": 1004
+  },
+  {
+    "id": "HumanEval/30",
+    "entry": "get_positive",
+    "excerpt": "Return only positive numbers in the list.",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": [],
+        "kind": "no limite",
+        "why": "0 não é positivo.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          1
+        ],
+        "kind": "vizinho acima",
+        "why": "1 é positivo.",
+        "expected_repr": "[1]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            -1
+          ]
+        ],
+        "expected": [],
+        "kind": "vizinho abaixo",
+        "why": "-1 não é positivo.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            -1,
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          1
+        ],
+        "kind": "no limite",
+        "why": "os três juntos, mantendo a ordem.",
+        "expected_repr": "[1]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n",
+    "reference": "\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n\n    return list(filter(lambda x: x > 0, l))\n\n",
+    "official": [
+      "assert candidate([-1, -2, 4, 5, 6]) == [4, 5, 6]",
+      "assert candidate([5, 3, -5, 2, 3, 3, 9, 0, 123, 1, -10]) == [5, 3, 2, 3, 3, 9, 123, 1]",
+      "assert candidate([-1, -2]) == []",
+      "assert candidate([]) == []"
+    ],
+    "n_evalplus": 1003
+  },
+  {
+    "id": "HumanEval/68",
+    "entry": "pluck",
+    "excerpt": "non-negative integer nodes ... smallest even value ... smallest index ... If there are no even values ... return []",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          0
+        ],
+        "kind": "no limite",
+        "why": "0 é o menor valor permitido e é par.",
+        "expected_repr": "[0, 0]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": [],
+        "kind": "vizinho acima",
+        "why": "1 é ímpar: não há pares.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          1
+        ],
+        "kind": "no limite",
+        "why": "empate de zeros: menor índice.",
+        "expected_repr": "[0, 1]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          2,
+          1
+        ],
+        "kind": "vizinho acima",
+        "why": "menor par é 2.",
+        "expected_repr": "[2, 1]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef pluck(arr):\n    \"\"\"\n    \"Given an array representing a branch of a tree that has non-negative integer nodes\n    your task is to pluck one of the nodes and return it.\n    The plucked node should be the node with the smallest even value.\n    If multiple nodes with the same smallest even value are found return the node that has smallest index.\n\n    The plucked node should be returned in a list, [ smalest_value, its index ],\n    If there are no even values or the given array is empty, return [].\n\n    Example 1:\n        Input: [4,2,3]\n        Output: [2, 1]\n        Explanation: 2 has the smallest even value, and 2 has the smallest index.\n\n    Example 2:\n        Input: [1,2,3]\n        Output: [2, 1]\n        Explanation: 2 has the smallest even value, and 2 has the smallest index. \n\n    Example 3:\n        Input: []\n        Output: []\n    \n    Example 4:\n        Input: [5, 0, 3, 0, 4, 2]\n        Output: [0, 1]\n        Explanation: 0 is the smallest value, but  there are two zeros,\n                     so we will choose the first zero, which has the smallest index.\n\n    Constraints:\n        * 1 <= nodes.length <= 10000\n        * 0 <= node.value\n    \"\"\"\n",
+    "reference": "\ndef pluck(arr):\n    \"\"\"\n    \"Given an array representing a branch of a tree that has non-negative integer nodes\n    your task is to pluck one of the nodes and return it.\n    The plucked node should be the node with the smallest even value.\n    If multiple nodes with the same smallest even value are found return the node that has smallest index.\n\n    The plucked node should be returned in a list, [ smalest_value, its index ],\n    If there are no even values or the given array is empty, return [].\n\n    Example 1:\n        Input: [4,2,3]\n        Output: [2, 1]\n        Explanation: 2 has the smallest even value, and 2 has the smallest index.\n\n    Example 2:\n        Input: [1,2,3]\n        Output: [2, 1]\n        Explanation: 2 has the smallest even value, and 2 has the smallest index. \n\n    Example 3:\n        Input: []\n        Output: []\n    \n    Example 4:\n        Input: [5, 0, 3, 0, 4, 2]\n        Output: [0, 1]\n        Explanation: 0 is the smallest value, but  there are two zeros,\n                     so we will choose the first zero, which has the smallest index.\n\n    Constraints:\n        * 1 <= nodes.length <= 10000\n        * 0 <= node.value\n    \"\"\"\n\n\n    if all(val % 2 == 1 for val in arr): return []\n    min_even = min(filter(lambda x: x % 2 == 0, arr))\n    for i in range(len(arr)):\n        if arr[i] == min_even:\n            return [min_even, i]\n\n",
+    "official": [
+      "assert True, 'This prints if this assert fails 1 (good for debugging!)'",
+      "assert candidate([4, 2, 3]) == [2, 1], 'Error'",
+      "assert candidate([1, 2, 3]) == [2, 1], 'Error'",
+      "assert candidate([]) == [], 'Error'",
+      "assert candidate([5, 0, 3, 0, 4, 2]) == [0, 1], 'Error'",
+      "assert True, 'This prints if this assert fails 2 (also good for debugging!)'",
+      "assert candidate([1, 2, 3, 0, 5, 3]) == [0, 3], 'Error'",
+      "assert candidate([5, 4, 8, 4, 8]) == [4, 1], 'Error'",
+      "assert candidate([7, 6, 7, 1]) == [6, 1], 'Error'",
+      "assert candidate([7, 9, 7, 1]) == [], 'Error'"
+    ],
+    "n_evalplus": 1008
+  },
+  {
+    "id": "HumanEval/72",
+    "entry": "will_it_fly",
+    "excerpt": "the sum of its elements is less than or equal the maximum possible weight w",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            2,
+            2
+          ],
+          4
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "soma igual a w é permitida.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            2,
+            2
+          ],
+          3
+        ],
+        "expected": false,
+        "kind": "vizinho abaixo",
+        "why": "w uma unidade menor que a soma.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            2,
+            2
+          ],
+          5
+        ],
+        "expected": true,
+        "kind": "vizinho acima",
+        "why": "w uma unidade maior que a soma.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            3
+          ],
+          3
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "um elemento, soma igual a w.",
+        "expected_repr": "True"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef will_it_fly(q,w):\n    '''\n    Write a function that returns True if the object q will fly, and False otherwise.\n    The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.\n\n    Example:\n    will_it_fly([1, 2], 5) ➞ False \n    # 1+2 is less than the maximum possible weight, but it's unbalanced.\n\n    will_it_fly([3, 2, 3], 1) ➞ False\n    # it's balanced, but 3+2+3 is more than the maximum possible weight.\n\n    will_it_fly([3, 2, 3], 9) ➞ True\n    # 3+2+3 is less than the maximum possible weight, and it's balanced.\n\n    will_it_fly([3], 5) ➞ True\n    # 3 is less than the maximum possible weight, and it's balanced.\n    '''\n",
+    "reference": "\ndef will_it_fly(q,w):\n    '''\n    Write a function that returns True if the object q will fly, and False otherwise.\n    The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.\n\n    Example:\n    will_it_fly([1, 2], 5) ➞ False \n    # 1+2 is less than the maximum possible weight, but it's unbalanced.\n\n    will_it_fly([3, 2, 3], 1) ➞ False\n    # it's balanced, but 3+2+3 is more than the maximum possible weight.\n\n    will_it_fly([3, 2, 3], 9) ➞ True\n    # 3+2+3 is less than the maximum possible weight, and it's balanced.\n\n    will_it_fly([3], 5) ➞ True\n    # 3 is less than the maximum possible weight, and it's balanced.\n    '''\n\n    return q == q[::-1] and sum(q) <= w\n\n",
+    "official": [
+      "assert candidate([3, 2, 3], 9) is True",
+      "assert candidate([1, 2], 5) is False",
+      "assert candidate([3], 5) is True",
+      "assert candidate([3, 2, 3], 1) is False",
+      "assert candidate([1, 2, 3], 6) is False",
+      "assert candidate([5], 5) is True"
+    ],
+    "n_evalplus": 697
+  },
+  {
+    "id": "HumanEval/80",
+    "entry": "is_happy",
+    "excerpt": "A string is happy if its length is at least 3 and every 3 consecutive letters are distinct",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          "abc"
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "tamanho 3, letras distintas.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          "ab"
+        ],
+        "expected": false,
+        "kind": "vizinho abaixo",
+        "why": "tamanho 2 não atinge o mínimo.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          "abcd"
+        ],
+        "expected": true,
+        "kind": "vizinho acima",
+        "why": "tamanho 4, toda janela distinta.",
+        "expected_repr": "True"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef is_happy(s):\n    \"\"\"You are given a string s.\n    Your task is to check if the string is happy or not.\n    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n    For example:\n    is_happy(a) => False\n    is_happy(aa) => False\n    is_happy(abcd) => True\n    is_happy(aabb) => False\n    is_happy(adb) => True\n    is_happy(xyy) => False\n    \"\"\"\n",
+    "reference": "\ndef is_happy(s):\n    \"\"\"You are given a string s.\n    Your task is to check if the string is happy or not.\n    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n    For example:\n    is_happy(a) => False\n    is_happy(aa) => False\n    is_happy(abcd) => True\n    is_happy(aabb) => False\n    is_happy(adb) => True\n    is_happy(xyy) => False\n    \"\"\"\n\n    if len(s) < 3: return False\n    for i in range(len(s) - 2):\n        if s[i] == s[i + 1] or s[i] == s[i + 2] or s[i + 1] == s[i + 2]:\n            return False\n    return True\n\n",
+    "official": [
+      "assert candidate('a') == False, 'a'",
+      "assert candidate('aa') == False, 'aa'",
+      "assert candidate('abcd') == True, 'abcd'",
+      "assert candidate('aabb') == False, 'aabb'",
+      "assert candidate('adb') == True, 'adb'",
+      "assert candidate('xyy') == False, 'xyy'",
+      "assert candidate('iopaxpoi') == True, 'iopaxpoi'",
+      "assert candidate('iopaxioi') == False, 'iopaxioi'"
+    ],
+    "n_evalplus": 949
+  },
+  {
+    "id": "HumanEval/96",
+    "entry": "count_up_to",
+    "excerpt": "integers that are prime numbers and less than n",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          7
+        ],
+        "expected": [
+          2,
+          3,
+          5
+        ],
+        "kind": "no limite",
+        "why": "7 é primo, mas não é menor que 7.",
+        "expected_repr": "[2, 3, 5]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          8
+        ],
+        "expected": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "kind": "vizinho acima",
+        "why": "7 é menor que 8.",
+        "expected_repr": "[2, 3, 5, 7]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          6
+        ],
+        "expected": [
+          2,
+          3,
+          5
+        ],
+        "kind": "vizinho abaixo",
+        "why": "5 é menor que 6.",
+        "expected_repr": "[2, 3, 5]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          2
+        ],
+        "expected": [],
+        "kind": "no limite",
+        "why": "2 não é menor que 2.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B5",
+        "args": [
+          3
+        ],
+        "expected": [
+          2
+        ],
+        "kind": "vizinho acima",
+        "why": "2 é menor que 3.",
+        "expected_repr": "[2]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef count_up_to(n):\n    \"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\n    integers that are prime numbers and less than n.\n    for example:\n    count_up_to(5) => [2,3]\n    count_up_to(11) => [2,3,5,7]\n    count_up_to(0) => []\n    count_up_to(20) => [2,3,5,7,11,13,17,19]\n    count_up_to(1) => []\n    count_up_to(18) => [2,3,5,7,11,13,17]\n    \"\"\"\n",
+    "reference": "\ndef count_up_to(n):\n    \"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\n    integers that are prime numbers and less than n.\n    for example:\n    count_up_to(5) => [2,3]\n    count_up_to(11) => [2,3,5,7]\n    count_up_to(0) => []\n    count_up_to(20) => [2,3,5,7,11,13,17,19]\n    count_up_to(1) => []\n    count_up_to(18) => [2,3,5,7,11,13,17]\n    \"\"\"\n\n\n    ans = []\n    isprime = [True] * (n + 1)\n    for i in range(2, n):\n        if isprime[i]:\n            ans.append(i)\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    return ans\n\n",
+    "official": [
+      "assert candidate(5) == [2, 3]",
+      "assert candidate(6) == [2, 3, 5]",
+      "assert candidate(7) == [2, 3, 5]",
+      "assert candidate(10) == [2, 3, 5, 7]",
+      "assert candidate(0) == []",
+      "assert candidate(22) == [2, 3, 5, 7, 11, 13, 17, 19]",
+      "assert candidate(1) == []",
+      "assert candidate(18) == [2, 3, 5, 7, 11, 13, 17]",
+      "assert candidate(47) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]",
+      "assert candidate(101) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]"
+    ],
+    "n_evalplus": 190
+  },
+  {
+    "id": "HumanEval/108",
+    "entry": "count_nums",
+    "excerpt": "number of elements which has a sum of digits > 0 ... -123 has signed digits -1, 2, and 3",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            -11
+          ]
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "-1 + 1 = 0, não é > 0 (o exemplo do enunciado confirma).",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            -12
+          ]
+        ],
+        "expected": 1,
+        "kind": "vizinho acima",
+        "why": "-1 + 2 = 1 > 0.",
+        "expected_repr": "1"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            -10
+          ]
+        ],
+        "expected": 0,
+        "kind": "vizinho abaixo",
+        "why": "-1 + 0 = -1.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "soma dos dígitos de 0 é 0.",
+        "expected_repr": "0"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n",
+    "reference": "\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n\n    def judge(x: int) -> int:\n        l = list(str(x))\n        if l[0] == \"-\":\n            l = l[1:]\n            l = list(map(int, l))\n            l[0] = -l[0]\n        else:\n            l = list(map(int, l))\n        return 1 if sum(l) > 0 else 0\n    return sum(map(judge, arr))\n\n",
+    "official": [
+      "assert candidate([]) == 0",
+      "assert candidate([-1, -2, 0]) == 0",
+      "assert candidate([1, 1, 2, -2, 3, 4, 5]) == 6",
+      "assert candidate([1, 6, 9, -6, 0, 1, 5]) == 5",
+      "assert candidate([1, 100, 98, -7, 1, -1]) == 4",
+      "assert candidate([12, 23, 34, -45, -56, 0]) == 5",
+      "assert candidate([-0, 1 ** 0]) == 1",
+      "assert candidate([1]) == 1",
+      "assert True, 'This prints if this assert fails 2 (also good for debugging!)'"
+    ],
+    "n_evalplus": 1008
+  },
+  {
+    "id": "HumanEval/122",
+    "entry": "add_elements",
+    "excerpt": "sum of the elements with at most two digits from the first k elements of arr. 1 <= k <= len(arr)",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            99,
+            100
+          ],
+          2
+        ],
+        "expected": 99,
+        "kind": "no limite",
+        "why": "99 tem dois dígitos (entra); 100 tem três (piloto).",
+        "expected_repr": "99"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            10,
+            9
+          ],
+          2
+        ],
+        "expected": 19,
+        "kind": "no limite",
+        "why": "10 tem dois dígitos e entra (piloto).",
+        "expected_repr": "19"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            5,
+            6,
+            7
+          ],
+          3
+        ],
+        "expected": 18,
+        "kind": "extremo",
+        "why": "k = len(arr), maior valor permitido (piloto).",
+        "expected_repr": "18"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            5,
+            6,
+            7
+          ],
+          1
+        ],
+        "expected": 5,
+        "kind": "extremo",
+        "why": "k = 1, menor valor permitido.",
+        "expected_repr": "5"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n",
+    "reference": "\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n\n\n    def digits(x: int) -> int:\n        s = str(x)\n        return len(s) - 1 if s[0] == \"-\" else len(s)\n    return sum(filter(lambda x: digits(x) <= 2, arr[:k]))\n\n",
+    "official": [
+      "assert candidate([1, -2, -3, 41, 57, 76, 87, 88, 99], 3) == -4",
+      "assert candidate([111, 121, 3, 4000, 5, 6], 2) == 0",
+      "assert candidate([11, 21, 3, 90, 5, 6, 7, 8, 9], 4) == 125",
+      "assert candidate([111, 21, 3, 4000, 5, 6, 7, 8, 9], 4) == 24, 'This prints if this assert fails 1 (good for debugging!)'",
+      "assert candidate([1], 1) == 1, 'This prints if this assert fails 2 (also good for debugging!)'"
+    ],
+    "n_evalplus": 1005
+  },
+  {
+    "id": "HumanEval/126",
+    "entry": "is_sorted",
+    "excerpt": "If list has more than 1 duplicate of the same number, return False.",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "uma duplicata é aceita (exemplo [1,2,2,3,3,4] -> True).",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": false,
+        "kind": "vizinho acima",
+        "why": "três iguais é mais de uma duplicata.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": true,
+        "kind": "vizinho abaixo",
+        "why": "sem duplicata.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            5
+          ]
+        ],
+        "expected": true,
+        "kind": "extremo",
+        "why": "um elemento (exemplo do enunciado).",
+        "expected_repr": "True"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef is_sorted(lst):\n    '''\n    Given a list of numbers, return whether or not they are sorted\n    in ascending order. If list has more than 1 duplicate of the same\n    number, return False. Assume no negative numbers and only integers.\n\n    Examples\n    is_sorted([5]) ➞ True\n    is_sorted([1, 2, 3, 4, 5]) ➞ True\n    is_sorted([1, 3, 2, 4, 5]) ➞ False\n    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True\n    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True\n    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False\n    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True\n    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False\n    '''\n",
+    "reference": "\ndef is_sorted(lst):\n    '''\n    Given a list of numbers, return whether or not they are sorted\n    in ascending order. If list has more than 1 duplicate of the same\n    number, return False. Assume no negative numbers and only integers.\n\n    Examples\n    is_sorted([5]) ➞ True\n    is_sorted([1, 2, 3, 4, 5]) ➞ True\n    is_sorted([1, 3, 2, 4, 5]) ➞ False\n    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True\n    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True\n    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False\n    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True\n    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False\n    '''\n\n\n    count = dict()\n    for x in lst:\n        if x not in count: count[x] = 0\n        count[x] += 1\n        if count[x] > 2: return False\n    return lst == sorted(lst)\n\n",
+    "official": [
+      "assert candidate([5]) == True",
+      "assert candidate([1, 2, 3, 4, 5]) == True",
+      "assert candidate([1, 3, 2, 4, 5]) == False",
+      "assert candidate([1, 2, 3, 4, 5, 6]) == True",
+      "assert candidate([1, 2, 3, 4, 5, 6, 7]) == True",
+      "assert candidate([1, 3, 2, 4, 5, 6, 7]) == False, 'This prints if this assert fails 1 (good for debugging!)'",
+      "assert candidate([]) == True, 'This prints if this assert fails 2 (good for debugging!)'",
+      "assert candidate([1]) == True, 'This prints if this assert fails 3 (good for debugging!)'",
+      "assert candidate([3, 2, 1]) == False, 'This prints if this assert fails 4 (good for debugging!)'",
+      "assert candidate([1, 2, 2, 2, 3, 4]) == False, 'This prints if this assert fails 5 (good for debugging!)'",
+      "assert candidate([1, 2, 3, 3, 3, 4]) == False, 'This prints if this assert fails 6 (good for debugging!)'",
+      "assert candidate([1, 2, 2, 3, 3, 4]) == True, 'This prints if this assert fails 7 (good for debugging!)'",
+      "assert candidate([1, 2, 3, 4]) == True, 'This prints if this assert fails 8 (good for debugging!)'"
+    ],
+    "n_evalplus": 1012
+  },
+  {
+    "id": "HumanEval/129",
+    "entry": "minPath",
+    "excerpt": "Given a grid with N rows and N columns (N >= 2) and a positive integer k",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          1
+        ],
+        "expected": [
+          1
+        ],
+        "kind": "no limite",
+        "why": "N = 2 e k = 1, os menores valores permitidos.",
+        "expected_repr": "[1]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          1
+        ],
+        "kind": "no limite",
+        "why": "N = 2: vai e volta entre 1 e 2.",
+        "expected_repr": "[1, 2, 1]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ],
+        "kind": "no limite",
+        "why": "N = 2 com o 1 no canto oposto.",
+        "expected_repr": "[1, 2]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ],
+          1
+        ],
+        "expected": [
+          1
+        ],
+        "kind": "vizinho acima",
+        "why": "N = 3, k = 1.",
+        "expected_repr": "[1]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef minPath(grid, k):\n    \"\"\"\n    Given a grid with N rows and N columns (N >= 2) and a positive integer k, \n    each cell of the grid contains a value. Every integer in the range [1, N * N]\n    inclusive appears exactly once on the cells of the grid.\n\n    You have to find the minimum path of length k in the grid. You can start\n    from any cell, and in each step you can move to any of the neighbor cells,\n    in other words, you can go to cells which share an edge with you current\n    cell.\n    Please note that a path of length k means visiting exactly k cells (not\n    necessarily distinct).\n    You CANNOT go off the grid.\n    A path A (of length k) is considered less than a path B (of length k) if\n    after making the ordered lists of the values on the cells that A and B go\n    through (let's call them lst_A and lst_B), lst_A is lexicographically less\n    than lst_B, in other words, there exist an integer index i (1 <= i <= k)\n    such that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\n    lst_A[j] = lst_B[j].\n    It is guaranteed that the answer is unique.\n    Return an ordered list of the values on the cells that the minimum path go through.\n\n    Examples:\n\n        Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3\n        Output: [1, 2, 1]\n\n        Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1\n        Output: [1]\n    \"\"\"\n",
+    "reference": "\ndef minPath(grid, k):\n    \"\"\"\n    Given a grid with N rows and N columns (N >= 2) and a positive integer k, \n    each cell of the grid contains a value. Every integer in the range [1, N * N]\n    inclusive appears exactly once on the cells of the grid.\n\n    You have to find the minimum path of length k in the grid. You can start\n    from any cell, and in each step you can move to any of the neighbor cells,\n    in other words, you can go to cells which share an edge with you current\n    cell.\n    Please note that a path of length k means visiting exactly k cells (not\n    necessarily distinct).\n    You CANNOT go off the grid.\n    A path A (of length k) is considered less than a path B (of length k) if\n    after making the ordered lists of the values on the cells that A and B go\n    through (let's call them lst_A and lst_B), lst_A is lexicographically less\n    than lst_B, in other words, there exist an integer index i (1 <= i <= k)\n    such that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\n    lst_A[j] = lst_B[j].\n    It is guaranteed that the answer is unique.\n    Return an ordered list of the values on the cells that the minimum path go through.\n\n    Examples:\n\n        Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3\n        Output: [1, 2, 1]\n\n        Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1\n        Output: [1]\n    \"\"\"\n\n\n    N = len(grid)\n    x, y = 0, 0\n    for i in range(N):\n        for j in range(N):\n            if grid[i][j] == 1:\n                x, y = i, j\n    mn = N * N\n    if x > 0: mn = min(mn, grid[x - 1][y])\n    if x < N - 1: mn = min(mn, grid[x + 1][y])\n    if y > 0: mn = min(mn, grid[x][y - 1])\n    if y < N - 1: mn = min(mn, grid[x][y + 1])\n    return [1 if i % 2 == 0 else mn for i in range(k)]\n\n",
+    "official": [
+      "assert candidate([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3) == [1, 2, 1]",
+      "assert candidate([[5, 9, 3], [4, 1, 6], [7, 8, 2]], 1) == [1]",
+      "assert candidate([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], 4) == [1, 2, 1, 2]",
+      "assert candidate([[6, 4, 13, 10], [5, 7, 12, 1], [3, 16, 11, 15], [8, 14, 9, 2]], 7) == [1, 10, 1, 10, 1, 10, 1]",
+      "assert candidate([[8, 14, 9, 2], [6, 4, 13, 15], [5, 7, 1, 12], [3, 10, 11, 16]], 5) == [1, 7, 1, 7, 1]",
+      "assert candidate([[11, 8, 7, 2], [5, 16, 14, 4], [9, 3, 15, 6], [12, 13, 10, 1]], 9) == [1, 6, 1, 6, 1, 6, 1, 6, 1]",
+      "assert candidate([[12, 13, 10, 1], [9, 3, 15, 6], [5, 16, 14, 4], [11, 8, 7, 2]], 12) == [1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6]",
+      "assert candidate([[2, 7, 4], [3, 1, 5], [6, 8, 9]], 8) == [1, 3, 1, 3, 1, 3, 1, 3]",
+      "assert candidate([[6, 1, 5], [3, 8, 9], [2, 7, 4]], 8) == [1, 5, 1, 5, 1, 5, 1, 5]",
+      "assert candidate([[1, 2], [3, 4]], 10) == [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]",
+      "assert candidate([[1, 3], [3, 2]], 10) == [1, 3, 1, 3, 1, 3, 1, 3, 1, 3]"
+    ],
+    "n_evalplus": 199
+  },
+  {
+    "id": "HumanEval/136",
+    "entry": "largest_smallest_integers",
+    "excerpt": "'a' is the largest of negative integers, and 'b' is the smallest of positive integers",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            -1,
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          -1,
+          1
+        ],
+        "kind": "no limite",
+        "why": "0 não é negativo nem positivo.",
+        "expected_repr": "(-1, 1)"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          null,
+          null
+        ],
+        "kind": "no limite",
+        "why": "só zeros (exemplo [0] -> (None, None)).",
+        "expected_repr": "(None, None)"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            -2,
+            -1
+          ]
+        ],
+        "expected": [
+          -1,
+          null
+        ],
+        "kind": "vizinho abaixo",
+        "why": "maior negativo é -1.",
+        "expected_repr": "(-1, None)"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          null,
+          1
+        ],
+        "kind": "vizinho acima",
+        "why": "menor positivo é 1.",
+        "expected_repr": "(None, 1)"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef largest_smallest_integers(lst):\n    '''\n    Create a function that returns a tuple (a, b), where 'a' is\n    the largest of negative integers, and 'b' is the smallest\n    of positive integers in a list.\n    If there is no negative or positive integers, return them as None.\n\n    Examples:\n    largest_smallest_integers([2, 4, 1, 3, 5, 7]) == (None, 1)\n    largest_smallest_integers([]) == (None, None)\n    largest_smallest_integers([0]) == (None, None)\n    '''\n",
+    "reference": "\ndef largest_smallest_integers(lst):\n    '''\n    Create a function that returns a tuple (a, b), where 'a' is\n    the largest of negative integers, and 'b' is the smallest\n    of positive integers in a list.\n    If there is no negative or positive integers, return them as None.\n\n    Examples:\n    largest_smallest_integers([2, 4, 1, 3, 5, 7]) == (None, 1)\n    largest_smallest_integers([]) == (None, None)\n    largest_smallest_integers([0]) == (None, None)\n    '''\n\n    neg = list(filter(lambda x: x < 0, lst))\n    pos = list(filter(lambda x: x > 0, lst))\n    return None if neg == [] else max(neg), None if pos == [] else min(pos)\n\n",
+    "official": [
+      "assert candidate([2, 4, 1, 3, 5, 7]) == (None, 1)",
+      "assert candidate([2, 4, 1, 3, 5, 7, 0]) == (None, 1)",
+      "assert candidate([1, 3, 2, 4, 5, 6, -2]) == (-2, 1)",
+      "assert candidate([4, 5, 3, 6, 2, 7, -7]) == (-7, 2)",
+      "assert candidate([7, 3, 8, 4, 9, 2, 5, -9]) == (-9, 2)",
+      "assert candidate([]) == (None, None)",
+      "assert candidate([0]) == (None, None)",
+      "assert candidate([-1, -3, -5, -6]) == (-1, None)",
+      "assert candidate([-1, -3, -5, -6, 0]) == (-1, None)",
+      "assert candidate([-6, -4, -4, -3, 1]) == (-3, 1)",
+      "assert candidate([-6, -4, -4, -3, -100, 1]) == (-3, 1)",
+      "assert True"
+    ],
+    "n_evalplus": 1009
+  },
+  {
+    "id": "HumanEval/156",
+    "entry": "int_to_mini_roman",
+    "excerpt": "Restrictions: 1 <= num <= 1000",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          1
+        ],
+        "expected": "i",
+        "kind": "no limite",
+        "why": "menor valor permitido.",
+        "expected_repr": "'i'"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          2
+        ],
+        "expected": "ii",
+        "kind": "vizinho acima",
+        "why": "vizinho do mínimo.",
+        "expected_repr": "'ii'"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          1000
+        ],
+        "expected": "m",
+        "kind": "no limite",
+        "why": "maior valor permitido.",
+        "expected_repr": "'m'"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          999
+        ],
+        "expected": "cmxcix",
+        "kind": "vizinho abaixo",
+        "why": "vizinho do máximo.",
+        "expected_repr": "'cmxcix'"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> int_to_mini_roman(19) == 'xix'\n    >>> int_to_mini_roman(152) == 'clii'\n    >>> int_to_mini_roman(426) == 'cdxxvi'\n    \"\"\"\n",
+    "reference": "\ndef int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> int_to_mini_roman(19) == 'xix'\n    >>> int_to_mini_roman(152) == 'clii'\n    >>> int_to_mini_roman(426) == 'cdxxvi'\n    \"\"\"\n\n\n    m = [\"\", \"m\"]\n    c = [\"\", \"c\", \"cc\", \"ccc\", \"cd\", \"d\", \"dc\", \"dcc\", \"dccc\", \"cm\"]\n    x = [\"\", \"x\", \"xx\", \"xxx\", \"xl\", \"l\", \"lx\", \"lxx\", \"lxxx\", \"xc\"]\n    i = [\"\", \"i\", \"ii\", \"iii\", \"iv\", \"v\", \"vi\", \"vii\", \"viii\", \"ix\"]\n    thousands = m[number // 1000]\n    hundreds = c[(number % 1000) // 100]\n    tens = x[(number % 100) // 10]\n    ones = i[number % 10]\n    return thousands + hundreds + tens + ones\n\n",
+    "official": [
+      "assert candidate(19) == 'xix'",
+      "assert candidate(152) == 'clii'",
+      "assert candidate(251) == 'ccli'",
+      "assert candidate(426) == 'cdxxvi'",
+      "assert candidate(500) == 'd'",
+      "assert candidate(1) == 'i'",
+      "assert candidate(4) == 'iv'",
+      "assert candidate(43) == 'xliii'",
+      "assert candidate(90) == 'xc'",
+      "assert candidate(94) == 'xciv'",
+      "assert candidate(532) == 'dxxxii'",
+      "assert candidate(900) == 'cm'",
+      "assert candidate(994) == 'cmxciv'",
+      "assert candidate(1000) == 'm'",
+      "assert True"
+    ],
+    "n_evalplus": 220
+  },
+  {
+    "id": "HumanEval/163",
+    "entry": "generate_integers",
+    "excerpt": "return the even digits between a and b, in ascending order ... generate_integers(2, 8) => [2, 4, 6, 8]",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          2,
+          2
+        ],
+        "expected": [
+          2
+        ],
+        "kind": "no limite",
+        "why": "a = b par: o exemplo mostra que os extremos entram.",
+        "expected_repr": "[2]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          3,
+          3
+        ],
+        "expected": [],
+        "kind": "vizinho acima",
+        "why": "a = b ímpar.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          1,
+          2
+        ],
+        "expected": [
+          2
+        ],
+        "kind": "no limite",
+        "why": "extremo superior par entra.",
+        "expected_repr": "[2]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          7,
+          9
+        ],
+        "expected": [
+          8
+        ],
+        "kind": "vizinho",
+        "why": "um só dígito par no intervalo.",
+        "expected_repr": "[8]"
+      }
+    ],
+    "bench": "HumanEval",
+    "prompt": "\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n",
+    "reference": "\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n\n\n    if a > b: a, b = b, a\n    return [i for i in range(a, min(b + 1, 10)) if i % 2 == 0]\n\n",
+    "official": [
+      "assert candidate(2, 10) == [2, 4, 6, 8], 'Test 1'",
+      "assert candidate(10, 2) == [2, 4, 6, 8], 'Test 2'",
+      "assert candidate(132, 2) == [2, 4, 6, 8], 'Test 3'",
+      "assert candidate(17, 89) == [], 'Test 4'",
+      "assert True, 'This prints if this assert fails 2 (also good for debugging!)'"
+    ],
+    "n_evalplus": 986
+  },
+  {
+    "id": "Mbpp/66",
+    "entry": "pos_count",
+    "excerpt": "count the number of positive numbers in a list",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            0
+          ]
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "0 não é positivo.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1
+          ]
+        ],
+        "expected": 1,
+        "kind": "vizinho acima",
+        "why": "1 é positivo.",
+        "expected_repr": "1"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            -1
+          ]
+        ],
+        "expected": 0,
+        "kind": "vizinho abaixo",
+        "why": "-1 não é positivo.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            -1,
+            0,
+            1
+          ]
+        ],
+        "expected": 1,
+        "kind": "no limite",
+        "why": "os três juntos.",
+        "expected_repr": "1"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function to count the number of positive numbers in a list.\nassert pos_count([1,-2,3,-4]) == 2\n\"\"\"\n",
+    "reference": "\ndef pos_count(l):\n  return len([x for x in l if x > 0])\n",
+    "official": [
+      "assert candidate([1,-2,3,-4]) == 2",
+      "assert candidate([3,4,5,-1]) == 3",
+      "assert candidate([1,2,3,4]) == 4"
+    ],
+    "n_evalplus": 110
+  },
+  {
+    "id": "Mbpp/167",
+    "entry": "next_power_of_2",
+    "excerpt": "smallest power of 2 greater than or equal to n",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          16
+        ],
+        "expected": 16,
+        "kind": "no limite",
+        "why": "16 já é potência de 2 (piloto).",
+        "expected_repr": "16"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          17
+        ],
+        "expected": 32,
+        "kind": "vizinho acima",
+        "why": "17 passa de 16.",
+        "expected_repr": "32"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          15
+        ],
+        "expected": 16,
+        "kind": "vizinho abaixo",
+        "why": "15 sobe para 16.",
+        "expected_repr": "16"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "kind": "extremo",
+        "why": "1 = 2^0 (piloto).",
+        "expected_repr": "1"
+      },
+      {
+        "tid": "B5",
+        "args": [
+          2
+        ],
+        "expected": 2,
+        "kind": "no limite",
+        "why": "2 é potência de 2 (piloto).",
+        "expected_repr": "2"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function to find the smallest power of 2 greater than or equal to n.\nassert next_power_of_2(0) == 1\n\"\"\"\n",
+    "reference": "\ndef next_power_of_2(n): \n  if n and not n & (n - 1):\n    return n\n  res = 1\n  while n != 0: \n    n >>= 1\n    res <<= 1\n  return res; \n",
+    "official": [
+      "assert candidate(0) == 1",
+      "assert candidate(5) == 8",
+      "assert candidate(17) == 32"
+    ],
+    "n_evalplus": 115
+  },
+  {
+    "id": "Mbpp/223",
+    "entry": "is_majority",
+    "excerpt": "The majority element is the element that occurs more than n/2 times.",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          4,
+          1
+        ],
+        "expected": false,
+        "kind": "no limite",
+        "why": "2 ocorrências = n/2, não é mais que n/2.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          4,
+          1
+        ],
+        "expected": true,
+        "kind": "vizinho acima",
+        "why": "3 > 2.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4,
+          1
+        ],
+        "expected": false,
+        "kind": "vizinho abaixo",
+        "why": "1 ocorrência.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          [
+            1,
+            1,
+            2
+          ],
+          3,
+          1
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "n ímpar: 2 > 1,5.",
+        "expected_repr": "True"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function that takes in a sorted array, its length (n), and an element and returns whether the element is the majority element in the given sorted array. (The majority element is the element that occurs more than n/2 times.)\nassert is_majority([1, 2, 3, 3, 3, 3, 10], 7, 3) == True\n\"\"\"\n",
+    "reference": "\nfrom bisect import bisect_left, bisect_right\ndef is_majority(arr, n, x):\n\tif x not in arr:\n\t\treturn False\n\tl = bisect_left(arr, x)\n\tr = bisect_right(arr, x)\n\treturn r - l > n / 2\n",
+    "official": [
+      "assert candidate([1, 2, 3, 3, 3, 3, 10], 7, 3) == True",
+      "assert candidate([1, 1, 2, 4, 4, 4, 6, 6], 8, 4) == False",
+      "assert candidate([1, 1, 1, 2, 2], 5, 1) == True",
+      "assert candidate([1, 1, 2, 2], 5, 1) == False"
+    ],
+    "n_evalplus": 104
+  },
+  {
+    "id": "Mbpp/238",
+    "entry": "number_of_substrings",
+    "excerpt": "count the number of non-empty substrings of a given string",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          ""
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "string vazia não tem substring não vazia.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          "a"
+        ],
+        "expected": 1,
+        "kind": "vizinho acima",
+        "why": "uma substring.",
+        "expected_repr": "1"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          "ab"
+        ],
+        "expected": 3,
+        "kind": "vizinho acima",
+        "why": "a, b, ab.",
+        "expected_repr": "3"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function to count the number of non-empty substrings of a given string.\nassert number_of_substrings(\"abc\") == 6\n\"\"\"\n",
+    "reference": "\ndef number_of_substrings(str1): \n\tstr_len = len(str1) \n\treturn str_len * (str_len + 1) // 2\n",
+    "official": [
+      "assert candidate(\"abc\") == 6",
+      "assert candidate(\"abcd\") == 10",
+      "assert candidate(\"abcde\") == 15"
+    ],
+    "n_evalplus": 105
+  },
+  {
+    "id": "Mbpp/239",
+    "entry": "get_total_number_of_sequences",
+    "excerpt": "each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          2,
+          2
+        ],
+        "expected": 1,
+        "kind": "no limite",
+        "why": "só (1, 2): 2 é exatamente o dobro de 1 e igual a m.",
+        "expected_repr": "1"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "kind": "vizinho abaixo",
+        "why": "m = 1 não comporta o dobro de 1.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          3,
+          2
+        ],
+        "expected": 2,
+        "kind": "vizinho acima",
+        "why": "(1, 2) e (1, 3).",
+        "expected_repr": "2"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          4,
+          2
+        ],
+        "expected": 4,
+        "kind": "no limite",
+        "why": "(1,2), (1,3), (1,4), (2,4): 4 é o dobro de 2 e igual a m.",
+        "expected_repr": "4"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.\nassert get_total_number_of_sequences(10, 4) == 4\n\"\"\"\n",
+    "reference": "\ndef get_total_number_of_sequences(m, n):\n\tT=[[0 for _ in range(n + 1)] for _ in range(m + 1)] \n\tfor i in range(m + 1): \n\t\tfor j in range(n + 1): \n\t\t\tif i==0 or j==0: \n\t\t\t\tT[i][j] = 0\n\t\t\telif i<j: \n\t\t\t\tT[i][j] = 0\n\t\t\telif j==1: \n\t\t\t\tT[i][j] = i \n\t\t\telse: \n\t\t\t\tT[i][j] = T[i-1][j] + T[i//2][j-1] \n\treturn T[m][n]\n",
+    "official": [
+      "assert candidate(10, 4) == 4",
+      "assert candidate(5, 2) == 6",
+      "assert candidate(16, 3) == 84"
+    ],
+    "n_evalplus": 107
+  },
+  {
+    "id": "Mbpp/244",
+    "entry": "next_Perfect_Square",
+    "excerpt": "find the next perfect square greater than a given number",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          36
+        ],
+        "expected": 49,
+        "kind": "no limite",
+        "why": "36 já é quadrado; o próximo maior é 49.",
+        "expected_repr": "49"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          35
+        ],
+        "expected": 36,
+        "kind": "vizinho abaixo",
+        "why": "exemplo do enunciado.",
+        "expected_repr": "36"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          37
+        ],
+        "expected": 49,
+        "kind": "vizinho acima",
+        "why": "o próximo é 49.",
+        "expected_repr": "49"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function to find the next perfect square greater than a given number.\nassert next_Perfect_Square(35) == 36\n\"\"\"\n",
+    "reference": "\nimport math  \ndef next_Perfect_Square(N): \n    if N < 0:\n        return 0\n    nextN = math.floor(math.sqrt(N)) + 1\n    return nextN * nextN \n",
+    "official": [
+      "assert candidate(35) == 36",
+      "assert candidate(6) == 9",
+      "assert candidate(9) == 16"
+    ],
+    "n_evalplus": 112
+  },
+  {
+    "id": "Mbpp/256",
+    "entry": "count_Primes_nums",
+    "excerpt": "returns the number of prime numbers less than the given non-negative number",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          7
+        ],
+        "expected": 3,
+        "kind": "no limite",
+        "why": "2, 3, 5; o 7 não é menor que 7.",
+        "expected_repr": "3"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          8
+        ],
+        "expected": 4,
+        "kind": "vizinho acima",
+        "why": "inclui o 7.",
+        "expected_repr": "4"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          6
+        ],
+        "expected": 3,
+        "kind": "vizinho abaixo",
+        "why": "2, 3, 5.",
+        "expected_repr": "3"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          2
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "2 não é menor que 2.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B5",
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "kind": "extremo",
+        "why": "menor valor não negativo.",
+        "expected_repr": "0"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function that takes in a non-negative number and returns the number of prime numbers less than the given non-negative number.\nassert count_Primes_nums(5) == 2\n\"\"\"\n",
+    "reference": "\ndef count_Primes_nums(n):\n    return sum(all(i % j != 0 for j in range(2, i)) for i in range(2, n))\n",
+    "official": [
+      "assert candidate(5) == 2",
+      "assert candidate(10) == 4",
+      "assert candidate(100) == 25"
+    ],
+    "n_evalplus": 104
+  },
+  {
+    "id": "Mbpp/277",
+    "entry": "dict_filter",
+    "excerpt": "only include entries with values greater than or equal to n",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          {
+            "a": 5,
+            "b": 4,
+            "c": 6
+          },
+          5
+        ],
+        "expected": {
+          "a": 5,
+          "c": 6
+        },
+        "kind": "no limite",
+        "why": "valor igual a n entra.",
+        "expected_repr": "{'a': 5, 'c': 6}"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          {
+            "a": 5,
+            "b": 4,
+            "c": 6
+          },
+          6
+        ],
+        "expected": {
+          "c": 6
+        },
+        "kind": "vizinho acima",
+        "why": "n uma unidade maior.",
+        "expected_repr": "{'c': 6}"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          {
+            "a": 5,
+            "b": 4,
+            "c": 6
+          },
+          4
+        ],
+        "expected": {
+          "a": 5,
+          "b": 4,
+          "c": 6
+        },
+        "kind": "vizinho abaixo",
+        "why": "n uma unidade menor.",
+        "expected_repr": "{'a': 5, 'b': 4, 'c': 6}"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function that takes in a dictionary and integer n and filters the dictionary to only include entries with values greater than or equal to n.\nassert dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},170)=={'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}\n\"\"\"\n",
+    "reference": "\ndef dict_filter(dict1, n):\n    return {key : value for (key, value) in dict1.items() if value >=n}\n",
+    "official": [
+      "assert candidate({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},170)=={'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}",
+      "assert candidate({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},180)=={ 'Alden Cantrell': 180, 'Pierre Cox': 190}",
+      "assert candidate({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},190)=={ 'Pierre Cox': 190}"
+    ],
+    "n_evalplus": 109
+  },
+  {
+    "id": "Mbpp/283",
+    "entry": "validate",
+    "excerpt": "frequency of each digit in the integer is less than or equal to the digit itself",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          22
+        ],
+        "expected": true,
+        "kind": "no limite",
+        "why": "o 2 aparece 2 vezes (igual ao dígito).",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          222
+        ],
+        "expected": false,
+        "kind": "vizinho acima",
+        "why": "o 2 aparece 3 vezes.",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          2
+        ],
+        "expected": true,
+        "kind": "vizinho abaixo",
+        "why": "o 2 aparece 1 vez.",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          11
+        ],
+        "expected": false,
+        "kind": "vizinho acima",
+        "why": "o 1 aparece 2 vezes.",
+        "expected_repr": "False"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function takes in an integer and check whether the frequency of each digit in the integer is less than or equal to the digit itself.\nassert validate(1234) == True\n\"\"\"\n",
+    "reference": "\ndef validate(n): \n    digits = [int(digit) for digit in str(n)]\n    return all(digit >= digits.count(digit) for digit in digits)\n",
+    "official": [
+      "assert candidate(1234) == True",
+      "assert candidate(51241) == False",
+      "assert candidate(321) == True"
+    ],
+    "n_evalplus": 107
+  },
+  {
+    "id": "Mbpp/388",
+    "entry": "highest_Power_of_2",
+    "excerpt": "highest power of 2 that is less than or equal to n",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          16
+        ],
+        "expected": 16,
+        "kind": "no limite",
+        "why": "16 é potência de 2.",
+        "expected_repr": "16"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          17
+        ],
+        "expected": 16,
+        "kind": "vizinho acima",
+        "why": "17 desce para 16.",
+        "expected_repr": "16"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          15
+        ],
+        "expected": 8,
+        "kind": "vizinho abaixo",
+        "why": "15 desce para 8.",
+        "expected_repr": "8"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          1
+        ],
+        "expected": 1,
+        "kind": "extremo",
+        "why": "1 = 2^0.",
+        "expected_repr": "1"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a python function to find the highest power of 2 that is less than or equal to n.\nassert highest_Power_of_2(10) == 8\n\"\"\"\n",
+    "reference": "\ndef highest_Power_of_2(n): \n    i = 0\n    while ((1 << i) <= n): \n        i += 1\n    return (1 << (i - 1))\n",
+    "official": [
+      "assert candidate(10) == 8",
+      "assert candidate(19) == 16",
+      "assert candidate(32) == 32"
+    ],
+    "n_evalplus": 106
+  },
+  {
+    "id": "Mbpp/433",
+    "entry": "check_greater",
+    "excerpt": "check whether the entered number is greater than the elements of the given array",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          3
+        ],
+        "expected": false,
+        "kind": "no limite",
+        "why": "3 não é maior que 3 (piloto).",
+        "expected_repr": "False"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          4
+        ],
+        "expected": true,
+        "kind": "vizinho acima",
+        "why": "4 é maior que todos (piloto).",
+        "expected_repr": "True"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          [
+            1,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": false,
+        "kind": "vizinho abaixo",
+        "why": "2 não é maior que 3.",
+        "expected_repr": "False"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function to check whether the entered number is greater than the elements of the given array.\nassert check_greater([1, 2, 3, 4, 5], 4) == False\n\"\"\"\n",
+    "reference": "\ndef check_greater(arr, number):\n  return all(number > el for el in arr)\n",
+    "official": [
+      "assert candidate([1, 2, 3, 4, 5], 4) == False",
+      "assert candidate([2, 3, 4, 5, 6], 8) == True",
+      "assert candidate([9, 7, 4, 8, 6, 1], 11) == True"
+    ],
+    "n_evalplus": 106
+  },
+  {
+    "id": "Mbpp/566",
+    "entry": "sum_digits",
+    "excerpt": "sum of the digits of a non-negative integer",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          0
+        ],
+        "expected": 0,
+        "kind": "no limite",
+        "why": "menor valor não negativo.",
+        "expected_repr": "0"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          9
+        ],
+        "expected": 9,
+        "kind": "vizinho",
+        "why": "maior número de um dígito.",
+        "expected_repr": "9"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          10
+        ],
+        "expected": 1,
+        "kind": "vizinho",
+        "why": "menor número de dois dígitos.",
+        "expected_repr": "1"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function to get the sum of the digits of a non-negative integer.\nassert sum_digits(345)==12\n\"\"\"\n",
+    "reference": "\ndef sum_digits(n):\n  return sum(map(int, str(n)))\n",
+    "official": [
+      "assert candidate(345)==12",
+      "assert candidate(12)==3",
+      "assert candidate(97)==16"
+    ],
+    "n_evalplus": 116
+  },
+  {
+    "id": "Mbpp/589",
+    "entry": "perfect_squares",
+    "excerpt": "find perfect squares between two given numbers; assert perfect_squares(1,30)==[1, 4, 9, 16, 25]",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          4,
+          8
+        ],
+        "expected": [
+          4
+        ],
+        "kind": "no limite",
+        "why": "o exemplo mostra que o limite inferior entra.",
+        "expected_repr": "[4]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          5,
+          10
+        ],
+        "expected": [
+          9
+        ],
+        "kind": "vizinho acima",
+        "why": "limite inferior logo acima de 4.",
+        "expected_repr": "[9]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          3,
+          8
+        ],
+        "expected": [
+          4
+        ],
+        "kind": "vizinho abaixo",
+        "why": "limite inferior logo abaixo de 4.",
+        "expected_repr": "[4]"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function to find perfect squares between two given numbers.\nassert perfect_squares(1,30)==[1, 4, 9, 16, 25]\n\"\"\"\n",
+    "reference": "\nimport math\ndef perfect_squares(a, b):\n    if a > b:\n        a, b = b, a\n    if b < 0:\n        return []\n    if a < 0:\n        a = 0\n    return list(filter(lambda x: math.sqrt(x).is_integer(), range(a, b+1)))\n",
+    "official": [
+      "assert candidate(1,30)==[1, 4, 9, 16, 25]",
+      "assert candidate(50,100)==[64, 81, 100]",
+      "assert candidate(100,200)==[100, 121, 144, 169, 196]"
+    ],
+    "n_evalplus": 106
+  },
+  {
+    "id": "Mbpp/603",
+    "entry": "get_ludic",
+    "excerpt": "get all lucid numbers smaller than or equal to a given integer",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          7
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "kind": "no limite",
+        "why": "7 é lúdico e igual a n: entra.",
+        "expected_repr": "[1, 2, 3, 5, 7]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          6
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "kind": "vizinho abaixo",
+        "why": "7 fica de fora.",
+        "expected_repr": "[1, 2, 3, 5]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          8
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "kind": "vizinho acima",
+        "why": "8 não é lúdico.",
+        "expected_repr": "[1, 2, 3, 5, 7]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          1
+        ],
+        "expected": [
+          1
+        ],
+        "kind": "extremo",
+        "why": "1 é lúdico (o exemplo começa em 1).",
+        "expected_repr": "[1]"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function to get all lucid numbers smaller than or equal to a given integer.\nassert get_ludic(10) == [1, 2, 3, 5, 7]\n\"\"\"\n",
+    "reference": "\ndef get_ludic(n):\n\tludics = []\n\tfor i in range(1, n + 1):\n\t\tludics.append(i)\n\tindex = 1\n\twhile(index != len(ludics)):\n\t\tfirst_ludic = ludics[index]\n\t\tremove_index = index + first_ludic\n\t\twhile(remove_index < len(ludics)):\n\t\t\tludics.remove(ludics[remove_index])\n\t\t\tremove_index = remove_index + first_ludic - 1\n\t\tindex += 1\n\treturn ludics\n",
+    "official": [
+      "assert candidate(10) == [1, 2, 3, 5, 7]",
+      "assert candidate(25) == [1, 2, 3, 5, 7, 11, 13, 17, 23, 25]",
+      "assert candidate(45) == [1, 2, 3, 5, 7, 11, 13, 17, 23, 25, 29, 37, 41, 43]"
+    ],
+    "n_evalplus": 106
+  },
+  {
+    "id": "Mbpp/745",
+    "entry": "divisible_by_digits",
+    "excerpt": "numbers within a given range from startnum to endnum; assert divisible_by_digits(1,22)==[1, ..., 22]",
+    "tests": [
+      {
+        "tid": "B1",
+        "args": [
+          22,
+          22
+        ],
+        "expected": [
+          22
+        ],
+        "kind": "no limite",
+        "why": "o exemplo mostra que os extremos entram.",
+        "expected_repr": "[22]"
+      },
+      {
+        "tid": "B2",
+        "args": [
+          12,
+          15
+        ],
+        "expected": [
+          12,
+          15
+        ],
+        "kind": "no limite",
+        "why": "os dois extremos são válidos.",
+        "expected_repr": "[12, 15]"
+      },
+      {
+        "tid": "B3",
+        "args": [
+          13,
+          14
+        ],
+        "expected": [],
+        "kind": "vizinho",
+        "why": "13 e 14 não dividem pelos dígitos.",
+        "expected_repr": "[]"
+      },
+      {
+        "tid": "B4",
+        "args": [
+          14,
+          15
+        ],
+        "expected": [
+          15
+        ],
+        "kind": "no limite",
+        "why": "extremo superior entra; 14 não divide por 4.",
+        "expected_repr": "[15]"
+      }
+    ],
+    "bench": "MBPP",
+    "prompt": "\"\"\"\nWrite a function to find numbers within a given range from startnum ti endnum where every number is divisible by every digit it contains. \nassert divisible_by_digits(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]\n\"\"\"\n",
+    "reference": "\ndef divisible_by_digits(startnum, endnum):\n    return [n for n in range(startnum, endnum+1) \\\n                if not any(map(lambda x: int(x) == 0 or n%int(x) != 0, str(n)))]\n",
+    "official": [
+      "assert candidate(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]",
+      "assert candidate(1,15)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15]",
+      "assert candidate(20,25)==[22, 24]"
+    ],
+    "n_evalplus": 107
+  }
+]

@@ -1,0 +1,12 @@
+You are an experienced Python programmer.
+
+Implement the Python function described below so that it fully satisfies the specification.
+
+Rules:
+1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.
+2. Keep the function name and parameters exactly as given.
+3. Use only the Python standard library.
+4. Do not include tests, usage examples, print statements, or explanations.
+
+Specification:
+{task}

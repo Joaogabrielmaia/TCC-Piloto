@@ -1,0 +1,30 @@
+{
+  "task": "HumanEval/108",
+  "generation": 3,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 16.8,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef count_nums(arr):\n    count = 0\n    for num in arr:\n        s = str(num)\n        if s[0] == '-':\n            digit_sum = sum(int(d) for d in s[1:]) - 2 * int(s[1])\n        else:\n            digit_sum = sum(int(d) for d in s)\n        if digit_sum > 0:\n            count += 1\n    return count\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 309,
+    "completion_tokens": 970,
+    "total_tokens": 1279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 873
+    },
+    "prompt_cache_hit_tokens": 256,
+    "prompt_cache_miss_tokens": 53
+  },
+  "timestamp": "2026-11-09T15:19:01Z"
+}

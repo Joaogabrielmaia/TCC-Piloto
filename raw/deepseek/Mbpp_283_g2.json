@@ -1,0 +1,30 @@
+{
+  "task": "Mbpp/283",
+  "generation": 2,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\n\"\"\"\nWrite a python function takes in an integer and check whether the frequency of each digit in the integer is less than or equal to the digit itself.\nassert validate(1234) == True\n\"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 17.3,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef validate(n):\n    s = str(abs(n))\n    return all(s.count(digit) <= int(digit) for digit in set(s))\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 225,
+    "completion_tokens": 954,
+    "total_tokens": 1179,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 919
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 97
+  },
+  "timestamp": "2026-11-09T15:26:08Z"
+}

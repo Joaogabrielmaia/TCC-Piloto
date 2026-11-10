@@ -1,0 +1,30 @@
+{
+  "task": "Mbpp/566",
+  "generation": 1,
+  "provider": "deepseek",
+  "model_requested": "deepseek-v4-pro",
+  "model_returned": "deepseek-v4-pro",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\n\"\"\"\nWrite a function to get the sum of the digits of a non-negative integer.\nassert sum_digits(345)==12\n\"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 4.3,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef sum_digits(n):\n    return sum(int(d) for d in str(n))\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 212,
+    "completion_tokens": 173,
+    "total_tokens": 385,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 150
+    },
+    "prompt_cache_hit_tokens": 128,
+    "prompt_cache_miss_tokens": 84
+  },
+  "timestamp": "2026-11-09T15:26:25Z"
+}

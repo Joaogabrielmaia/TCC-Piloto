@@ -1,0 +1,1262 @@
+[
+  {
+    "mid": "HumanEval_0_m1",
+    "task": "HumanEval/0",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_0_m2",
+    "task": "HumanEval/0",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_0_m3",
+    "task": "HumanEval/0",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 15)"
+  },
+  {
+    "mid": "HumanEval_0_m4",
+    "task": "HumanEval/0",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 16)"
+  },
+  {
+    "mid": "HumanEval_0_m5",
+    "task": "HumanEval/0",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 16)"
+  },
+  {
+    "mid": "HumanEval_0_m6",
+    "task": "HumanEval/0",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 16)"
+  },
+  {
+    "mid": "HumanEval_12_m1",
+    "task": "HumanEval/12",
+    "op": "NEG",
+    "grupo": "generico",
+    "desc": "NEG: remove not (linha 15)"
+  },
+  {
+    "mid": "HumanEval_21_m1",
+    "task": "HumanEval/21",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 13)"
+  },
+  {
+    "mid": "HumanEval_21_m2",
+    "task": "HumanEval/21",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 14)"
+  },
+  {
+    "mid": "HumanEval_30_m1",
+    "task": "HumanEval/30",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 11)"
+  },
+  {
+    "mid": "HumanEval_30_m2",
+    "task": "HumanEval/30",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 11)"
+  },
+  {
+    "mid": "HumanEval_30_m3",
+    "task": "HumanEval/30",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 11)"
+  },
+  {
+    "mid": "HumanEval_68_m1",
+    "task": "HumanEval/68",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 40)"
+  },
+  {
+    "mid": "HumanEval_68_m2",
+    "task": "HumanEval/68",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 40)"
+  },
+  {
+    "mid": "HumanEval_68_m3",
+    "task": "HumanEval/68",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 2 (linha 38)"
+  },
+  {
+    "mid": "HumanEval_68_m4",
+    "task": "HumanEval/68",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 0 (linha 38)"
+  },
+  {
+    "mid": "HumanEval_68_m5",
+    "task": "HumanEval/68",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 39)"
+  },
+  {
+    "mid": "HumanEval_68_m6",
+    "task": "HumanEval/68",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 39)"
+  },
+  {
+    "mid": "HumanEval_72_m1",
+    "task": "HumanEval/72",
+    "op": "LCR",
+    "grupo": "generico",
+    "desc": "LCR: and -> or (linha 21)"
+  },
+  {
+    "mid": "HumanEval_72_m2",
+    "task": "HumanEval/72",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: <= -> < (linha 21)"
+  },
+  {
+    "mid": "HumanEval_80_m1",
+    "task": "HumanEval/80",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 15)"
+  },
+  {
+    "mid": "HumanEval_80_m2",
+    "task": "HumanEval/80",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 3 -> 4 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_80_m3",
+    "task": "HumanEval/80",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 3 -> 2 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_80_m4",
+    "task": "HumanEval/80",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 16)"
+  },
+  {
+    "mid": "HumanEval_80_m5",
+    "task": "HumanEval/80",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 16)"
+  },
+  {
+    "mid": "HumanEval_80_m6",
+    "task": "HumanEval/80",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 16)"
+  },
+  {
+    "mid": "HumanEval_80_m7",
+    "task": "HumanEval/80",
+    "op": "LCR",
+    "grupo": "generico",
+    "desc": "LCR: or -> and (linha 17)"
+  },
+  {
+    "mid": "HumanEval_80_m8",
+    "task": "HumanEval/80",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 17)"
+  },
+  {
+    "mid": "HumanEval_80_m9",
+    "task": "HumanEval/80",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 17)"
+  },
+  {
+    "mid": "HumanEval_80_m10",
+    "task": "HumanEval/80",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 17)"
+  },
+  {
+    "mid": "HumanEval_80_m11",
+    "task": "HumanEval/80",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 17)"
+  },
+  {
+    "mid": "HumanEval_96_m1",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 17)"
+  },
+  {
+    "mid": "HumanEval_96_m2",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 17)"
+  },
+  {
+    "mid": "HumanEval_96_m3",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 17)"
+  },
+  {
+    "mid": "HumanEval_96_m4",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 17)"
+  },
+  {
+    "mid": "HumanEval_96_m5",
+    "task": "HumanEval/96",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 16)"
+  },
+  {
+    "mid": "HumanEval_96_m6",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 20)"
+  },
+  {
+    "mid": "HumanEval_96_m7",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 20)"
+  },
+  {
+    "mid": "HumanEval_96_m8",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 20)"
+  },
+  {
+    "mid": "HumanEval_96_m9",
+    "task": "HumanEval/96",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 20)"
+  },
+  {
+    "mid": "HumanEval_96_m10",
+    "task": "HumanEval/96",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 20)"
+  },
+  {
+    "mid": "HumanEval_108_m1",
+    "task": "HumanEval/108",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 21)"
+  },
+  {
+    "mid": "HumanEval_108_m2",
+    "task": "HumanEval/108",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 21)"
+  },
+  {
+    "mid": "HumanEval_108_m3",
+    "task": "HumanEval/108",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 21)"
+  },
+  {
+    "mid": "HumanEval_122_m1",
+    "task": "HumanEval/122",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 20)"
+  },
+  {
+    "mid": "HumanEval_122_m2",
+    "task": "HumanEval/122",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: <= -> < (linha 21)"
+  },
+  {
+    "mid": "HumanEval_122_m3",
+    "task": "HumanEval/122",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 2 -> 3 (linha 21)"
+  },
+  {
+    "mid": "HumanEval_122_m4",
+    "task": "HumanEval/122",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 2 -> 1 (linha 21)"
+  },
+  {
+    "mid": "HumanEval_126_m1",
+    "task": "HumanEval/126",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 23)"
+  },
+  {
+    "mid": "HumanEval_126_m2",
+    "task": "HumanEval/126",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 24)"
+  },
+  {
+    "mid": "HumanEval_126_m3",
+    "task": "HumanEval/126",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 2 -> 3 (linha 24)"
+  },
+  {
+    "mid": "HumanEval_126_m4",
+    "task": "HumanEval/126",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 2 -> 1 (linha 24)"
+  },
+  {
+    "mid": "HumanEval_129_m1",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 36)"
+  },
+  {
+    "mid": "HumanEval_129_m2",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 36)"
+  },
+  {
+    "mid": "HumanEval_129_m3",
+    "task": "HumanEval/129",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 41)"
+  },
+  {
+    "mid": "HumanEval_129_m4",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 41)"
+  },
+  {
+    "mid": "HumanEval_129_m5",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 41)"
+  },
+  {
+    "mid": "HumanEval_129_m6",
+    "task": "HumanEval/129",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 42)"
+  },
+  {
+    "mid": "HumanEval_129_m7",
+    "task": "HumanEval/129",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 43)"
+  },
+  {
+    "mid": "HumanEval_129_m8",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 43)"
+  },
+  {
+    "mid": "HumanEval_129_m9",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 43)"
+  },
+  {
+    "mid": "HumanEval_129_m10",
+    "task": "HumanEval/129",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 44)"
+  },
+  {
+    "mid": "HumanEval_129_m11",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 37)"
+  },
+  {
+    "mid": "HumanEval_129_m12",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 37)"
+  },
+  {
+    "mid": "HumanEval_129_m13",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 42)"
+  },
+  {
+    "mid": "HumanEval_129_m14",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 44)"
+  },
+  {
+    "mid": "HumanEval_129_m15",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 2 (linha 38)"
+  },
+  {
+    "mid": "HumanEval_129_m16",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 0 (linha 38)"
+  },
+  {
+    "mid": "HumanEval_129_m17",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 45)"
+  },
+  {
+    "mid": "HumanEval_129_m18",
+    "task": "HumanEval/129",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 45)"
+  },
+  {
+    "mid": "HumanEval_129_m19",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 45)"
+  },
+  {
+    "mid": "HumanEval_129_m20",
+    "task": "HumanEval/129",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 45)"
+  },
+  {
+    "mid": "HumanEval_129_m21",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 43)"
+  },
+  {
+    "mid": "HumanEval_129_m22",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 44)"
+  },
+  {
+    "mid": "HumanEval_129_m23",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 41)"
+  },
+  {
+    "mid": "HumanEval_129_m24",
+    "task": "HumanEval/129",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 42)"
+  },
+  {
+    "mid": "HumanEval_136_m1",
+    "task": "HumanEval/136",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 15)"
+  },
+  {
+    "mid": "HumanEval_136_m2",
+    "task": "HumanEval/136",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_136_m3",
+    "task": "HumanEval/136",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_136_m4",
+    "task": "HumanEval/136",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 16)"
+  },
+  {
+    "mid": "HumanEval_136_m5",
+    "task": "HumanEval/136",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 16)"
+  },
+  {
+    "mid": "HumanEval_136_m6",
+    "task": "HumanEval/136",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 16)"
+  },
+  {
+    "mid": "HumanEval_156_m1",
+    "task": "HumanEval/156",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 23)"
+  },
+  {
+    "mid": "HumanEval_156_m2",
+    "task": "HumanEval/156",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 23)"
+  },
+  {
+    "mid": "HumanEval_156_m3",
+    "task": "HumanEval/156",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 23)"
+  },
+  {
+    "mid": "HumanEval_163_m1",
+    "task": "HumanEval/163",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 14)"
+  },
+  {
+    "mid": "HumanEval_163_m2",
+    "task": "HumanEval/163",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m3",
+    "task": "HumanEval/163",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m4",
+    "task": "HumanEval/163",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m5",
+    "task": "HumanEval/163",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m6",
+    "task": "HumanEval/163",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m7",
+    "task": "HumanEval/163",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 15)"
+  },
+  {
+    "mid": "HumanEval_163_m8",
+    "task": "HumanEval/163",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 15)"
+  },
+  {
+    "mid": "Mbpp_66_m1",
+    "task": "Mbpp/66",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 3)"
+  },
+  {
+    "mid": "Mbpp_66_m2",
+    "task": "Mbpp/66",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_66_m3",
+    "task": "Mbpp/66",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_167_m1",
+    "task": "Mbpp/167",
+    "op": "LCR",
+    "grupo": "generico",
+    "desc": "LCR: and -> or (linha 3)"
+  },
+  {
+    "mid": "Mbpp_167_m2",
+    "task": "Mbpp/167",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_167_m3",
+    "task": "Mbpp/167",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_167_m4",
+    "task": "Mbpp/167",
+    "op": "NEG",
+    "grupo": "generico",
+    "desc": "NEG: remove not (linha 3)"
+  },
+  {
+    "mid": "Mbpp_167_m5",
+    "task": "Mbpp/167",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 3)"
+  },
+  {
+    "mid": "Mbpp_223_m1",
+    "task": "Mbpp/223",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 8)"
+  },
+  {
+    "mid": "Mbpp_223_m2",
+    "task": "Mbpp/223",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 8)"
+  },
+  {
+    "mid": "Mbpp_238_m1",
+    "task": "Mbpp/238",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 4)"
+  },
+  {
+    "mid": "Mbpp_239_m1",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_239_m2",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_239_m3",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 4)"
+  },
+  {
+    "mid": "Mbpp_239_m4",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 5)"
+  },
+  {
+    "mid": "Mbpp_239_m5",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 5)"
+  },
+  {
+    "mid": "Mbpp_239_m6",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m7",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m8",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 5)"
+  },
+  {
+    "mid": "Mbpp_239_m9",
+    "task": "Mbpp/239",
+    "op": "LCR",
+    "grupo": "generico",
+    "desc": "LCR: or -> and (linha 6)"
+  },
+  {
+    "mid": "Mbpp_239_m10",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m11",
+    "task": "Mbpp/239",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m12",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m13",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_239_m14",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_239_m15",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_239_m16",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_239_m17",
+    "task": "Mbpp/239",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 8)"
+  },
+  {
+    "mid": "Mbpp_239_m18",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 3)"
+  },
+  {
+    "mid": "Mbpp_239_m19",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 2 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_239_m20",
+    "task": "Mbpp/239",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 1 -> 0 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_239_m21",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 13)"
+  },
+  {
+    "mid": "Mbpp_239_m22",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 13)"
+  },
+  {
+    "mid": "Mbpp_239_m23",
+    "task": "Mbpp/239",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 13)"
+  },
+  {
+    "mid": "Mbpp_244_m1",
+    "task": "Mbpp/244",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 4)"
+  },
+  {
+    "mid": "Mbpp_244_m2",
+    "task": "Mbpp/244",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_244_m3",
+    "task": "Mbpp/244",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_244_m4",
+    "task": "Mbpp/244",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 6)"
+  },
+  {
+    "mid": "Mbpp_256_m1",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m2",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m3",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m4",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m5",
+    "task": "Mbpp/256",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m6",
+    "task": "Mbpp/256",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m7",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m8",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m9",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_256_m10",
+    "task": "Mbpp/256",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_277_m1",
+    "task": "Mbpp/277",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: >= -> > (linha 3)"
+  },
+  {
+    "mid": "Mbpp_283_m1",
+    "task": "Mbpp/283",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: >= -> > (linha 4)"
+  },
+  {
+    "mid": "Mbpp_388_m1",
+    "task": "Mbpp/388",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: <= -> < (linha 4)"
+  },
+  {
+    "mid": "Mbpp_388_m2",
+    "task": "Mbpp/388",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 5)"
+  },
+  {
+    "mid": "Mbpp_388_m3",
+    "task": "Mbpp/388",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 6)"
+  },
+  {
+    "mid": "Mbpp_433_m1",
+    "task": "Mbpp/433",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 3)"
+  },
+  {
+    "mid": "Mbpp_589_m1",
+    "task": "Mbpp/589",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: > -> >= (linha 4)"
+  },
+  {
+    "mid": "Mbpp_589_m2",
+    "task": "Mbpp/589",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 6)"
+  },
+  {
+    "mid": "Mbpp_589_m3",
+    "task": "Mbpp/589",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_589_m4",
+    "task": "Mbpp/589",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 6)"
+  },
+  {
+    "mid": "Mbpp_589_m5",
+    "task": "Mbpp/589",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 8)"
+  },
+  {
+    "mid": "Mbpp_589_m6",
+    "task": "Mbpp/589",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 8)"
+  },
+  {
+    "mid": "Mbpp_589_m7",
+    "task": "Mbpp/589",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 8)"
+  },
+  {
+    "mid": "Mbpp_589_m8",
+    "task": "Mbpp/589",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_589_m9",
+    "task": "Mbpp/589",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_589_m10",
+    "task": "Mbpp/589",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_589_m11",
+    "task": "Mbpp/589",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 10)"
+  },
+  {
+    "mid": "Mbpp_589_m12",
+    "task": "Mbpp/589",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 10)"
+  },
+  {
+    "mid": "Mbpp_603_m1",
+    "task": "Mbpp/603",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_603_m2",
+    "task": "Mbpp/603",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_603_m3",
+    "task": "Mbpp/603",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_603_m4",
+    "task": "Mbpp/603",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_603_m5",
+    "task": "Mbpp/603",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 13)"
+  },
+  {
+    "mid": "Mbpp_603_m6",
+    "task": "Mbpp/603",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 4)"
+  },
+  {
+    "mid": "Mbpp_603_m7",
+    "task": "Mbpp/603",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 9)"
+  },
+  {
+    "mid": "Mbpp_603_m8",
+    "task": "Mbpp/603",
+    "op": "ROR",
+    "grupo": "fronteira",
+    "desc": "ROR: < -> <= (linha 10)"
+  },
+  {
+    "mid": "Mbpp_603_m9",
+    "task": "Mbpp/603",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: - -> + (linha 12)"
+  },
+  {
+    "mid": "Mbpp_603_m10",
+    "task": "Mbpp/603",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 12)"
+  },
+  {
+    "mid": "Mbpp_745_m1",
+    "task": "Mbpp/745",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_745_m2",
+    "task": "Mbpp/745",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg0 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_745_m3",
+    "task": "Mbpp/745",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 +1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_745_m4",
+    "task": "Mbpp/745",
+    "op": "RNG",
+    "grupo": "fronteira",
+    "desc": "RNG: range arg1 -1 (linha 3)"
+  },
+  {
+    "mid": "Mbpp_745_m5",
+    "task": "Mbpp/745",
+    "op": "NEG",
+    "grupo": "generico",
+    "desc": "NEG: remove not (linha 4)"
+  },
+  {
+    "mid": "Mbpp_745_m6",
+    "task": "Mbpp/745",
+    "op": "AOR",
+    "grupo": "generico",
+    "desc": "AOR: + -> - (linha 3)"
+  },
+  {
+    "mid": "Mbpp_745_m7",
+    "task": "Mbpp/745",
+    "op": "LCR",
+    "grupo": "generico",
+    "desc": "LCR: or -> and (linha 4)"
+  },
+  {
+    "mid": "Mbpp_745_m8",
+    "task": "Mbpp/745",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_745_m9",
+    "task": "Mbpp/745",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_745_m10",
+    "task": "Mbpp/745",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> 1 (linha 4)"
+  },
+  {
+    "mid": "Mbpp_745_m11",
+    "task": "Mbpp/745",
+    "op": "CON",
+    "grupo": "fronteira",
+    "desc": "CON: constante 0 -> -1 (linha 4)"
+  }
+]

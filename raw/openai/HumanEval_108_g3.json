@@ -1,0 +1,33 @@
+{
+  "task": "HumanEval/108",
+  "generation": 3,
+  "provider": "openai",
+  "model_requested": "gpt-6.1-sol",
+  "model_returned": "gpt-6.1-sol",
+  "system": "You write Python code. Answer only with the requested code block.",
+  "prompt": "You are an experienced Python programmer.\n\nImplement the Python function described below so that it fully satisfies the specification.\n\nRules:\n1. Return only the complete function definition, including its signature and any imports it needs, inside a single ```python code block.\n2. Keep the function name and parameters exactly as given.\n3. Use only the Python standard library.\n4. Do not include tests, usage examples, print statements, or explanations.\n\nSpecification:\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n",
+  "temperature": "padrão (não enviada)",
+  "max_tokens": 16384,
+  "seconds": 3.3,
+  "attempts": 1,
+  "error": null,
+  "text": "```python\ndef count_nums(arr):\n    count = 0\n    for num in arr:\n        remaining = abs(num)\n        digit_sum = 0\n        while remaining >= 10:\n            remaining, digit = divmod(remaining, 10)\n            digit_sum += digit\n        digit_sum += -remaining if num < 0 else remaining\n        if digit_sum > 0:\n            count += 1\n    return count\n```",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 229,
+    "completion_tokens": 142,
+    "total_tokens": 371,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 41,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "timestamp": "2026-11-09T15:18:16Z"
+}
